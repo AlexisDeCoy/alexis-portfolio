@@ -1,0 +1,63 @@
+@import './base.css';
+
+#app {
+  width: 100%;
+  margin: 0 auto;
+  padding: 15vh 0;
+  font-weight: normal;
+}
+
+a {
+  color: var(--component-color);
+  padding: 3px;
+}
+
+.title {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.white {
+  color: #fff;
+}
+
+.attr {
+  color: var(--attr-color);
+}
+
+.var {
+  color: var(--var-color);
+}
+
+.tag-declare {
+  color: var(--tag-declare-color);
+}
+
+.import-control {
+  color: var(--import-control-color);
+}
+
+.string {
+  color: var(--string-color);
+}
+
+.css {
+  color: var(--css-color);
+}
+
+.function {
+  color: var(--function-color);
+}
+
+.component {
+  color: var(--component-color);
+}
+
+.active-enter-active,
+.active-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.active-enter-from,
+.active-leave-to {
+  opacity: 0;
+}

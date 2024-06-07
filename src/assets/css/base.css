@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Colors From VS Code Dark+ Theme: https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json */
+:root {
+  scrollbar-gutter: stable;
+  --attr-color: #9cdcfe;
+  --var-color: #4fc1ff;
+  --tag-declare-color: #569cd6;
+  --import-control-color: #c586c0;
+  --string-color: #ce9178;
+  --css-color: #d7ba7d;
+  --function-color: #dcdcaa;
+  --component-color: #4ec9b0;
+  --dark-grey-color: #181818;
+  --dark-grey-translucent: #181818ca;
+  --light-grey-color: #808080;
+}
+
+*,
+*::before,
+*::after {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--light-grey-color);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  background: #181818;
+  line-height: 1.6;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.prevent-scroll {
+  height: 100vh;
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}
