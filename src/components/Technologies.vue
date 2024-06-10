@@ -1,5 +1,5 @@
 <script setup>
-import { computed, inject, onMounted, ref } from 'vue';
+import { inject, onMounted, ref } from 'vue';
 import gradientComposable from '../assets/gradientComposable.js'
 import TechIcons from '../assets/data/TechIcons.js';
 

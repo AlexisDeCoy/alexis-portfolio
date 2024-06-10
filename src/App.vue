@@ -21,7 +21,8 @@ import PartBreak from './assets/PartBreak.vue'
 
 //fix Name svg gradient placement and potential top padding clip
 //resize slider/modal container to fit svg background
-//fix blur for: Technologies, Name, Previews - adjust blend mode so primary shape displays first
+//fix blur for: Technologies, Name, Previews -
+// adjust blend mode so primary shape displays first, maybe decrease stddev
 //option to increase legibility for resume --light-grey
 
 //ADD CSS VAR FOR DARK-GREY-TRANSLUCENT (#181818ca)

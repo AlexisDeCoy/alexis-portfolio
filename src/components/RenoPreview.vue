@@ -24,12 +24,9 @@ onMounted(() => { gradientComposable(stop0, stop1, stop2, stop3, stop4, stop5) }
         <svg :id="`${id}-svg`" xmlns="http://www.w3.org/2000/svg" :viewBox="viewBox" preserveAspectRatio="none">
             <defs>
                 <filter :id="`${id}-blur`" x="-2" y="-2" height="24" width="24">
-                    <feBlend :in="`${id}-blur`" />
-                    <feGaussianBlur in="sourceGraphic" :stdDeviation="blurMax * (blurSpread / 100)" />
-                    <feMerge>
-                        <feMergeNode />
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
+                    <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
+                    <feBlend in="SourceGraphic" in2="blur" mode="normal" />
+                    <feGaussianBlur stdDeviation="0.5" />
                 </filter>
                 <linearGradient :id="`${id}-gradient`" x1="0" y1="0" x2="100%" y2="0" gradientUnits="userSpaceOnUse">
                     <stop ref='stop0' offset="0.0" :stop-opacity="colorStrength" stop-color="#E057F2" />
@@ -42,8 +39,8 @@ onMounted(() => { gradientComposable(stop0, stop1, stop2, stop3, stop4, stop5) }
             </defs>
             <rect :x="orientation === 'portrait' ? '25' : '50'" :y="orientation === 'portrait' ? '25' : '40'"
                 :height="orientation === 'portrait' ? '450' : '400'" :width="orientation === 'portrait' ? '450' : '400'"
-                :fill="colorActive ? `url(#${id}-gradient)` : '#fff'"
-                :filter="blurActive ? `url(#${id}-blur)` : 'none'" :rx="orientation === 'portrait' ? '10' : '4'" />
+                :fill="colorActive ? `url(#${id}-gradient)` : '#fff'" :filter="blurActive ? `url(#${id}-blur)` : 'none'"
+                :rx="orientation === 'portrait' ? '10' : '4'" />
         </svg>
         <div class="slider-container">
             <ImageSlider :full-screen="fullScreen" :imgs="reno.imgs" @toggleFullScreen="toggleFullScreen" />
@@ -124,7 +121,7 @@ svg {
 .portrait .slider-container {
     width: 98%;
     margin: 1%;
-    height: 98%;
+    aspect-ratio: 1;
 }
 
 .content-container {
