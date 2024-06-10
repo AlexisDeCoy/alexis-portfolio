@@ -212,7 +212,7 @@ svg {
 .portrait .modal-container {
     width: 98%;
     margin: 1%;
-    height: 98%;
+    aspect-ratio: 1;
 }
 
 .content-container {

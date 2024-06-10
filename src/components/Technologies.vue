@@ -97,12 +97,8 @@ SCRIPT SETUP LAYOUT:
     <svg id="tech-svg" xmlns="http://www.w3.org/2000/svg" :viewBox="viewBox">
         <defs v-for="i in TechIcons.length">
             <filter :id="`tech-blur-${i}`" x="-2" y="-2" height="24" width="24">
-                <feBlend :in="`tech-blur-${i}`" />
-                <feGaussianBlur :stdDeviation="blurMax * (blurSpread / 100)" />
-                <feMerge>
-                    <feMergeNode in="SourceGraphic" />
-                    <feMergeNode />
-                </feMerge>
+                <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
+                <feBlend in="SourceGraphic" in2="blur" mode="normal" />
                 <feGaussianBlur stdDeviation="0.5" />
             </filter>
             <linearGradient :id="`tech-gradient-${i}`" x1="0" y1="0" x2="100%" y2="0" gradientUnits="userSpaceOnUse">
@@ -115,8 +111,8 @@ SCRIPT SETUP LAYOUT:
             </linearGradient>
         </defs>
         <g v-for="i in TechIcons.length - remainingIconQuantity">
-            <rect id="tech-svg-wrapper" :x="horizontalPosition(i)" :y="verticalPosition(i)" width="210" height="98" rx="32"
-                :fill="colorActive ? `url(#tech-gradient-${i})` : '#fff'"
+            <rect id="tech-svg-wrapper" :x="horizontalPosition(i)" :y="verticalPosition(i)" width="210" height="98"
+                rx="32" :fill="colorActive ? `url(#tech-gradient-${i})` : '#fff'"
                 :filter="blurActive ? `url(#tech-blur-${i})` : 'none'" />
             <rect :x="horizontalPosition(i) + 5" :y="verticalPosition(i) + 5" width="200" height="88" fill="#181818"
                 rx="26" />
