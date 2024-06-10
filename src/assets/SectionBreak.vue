@@ -3,7 +3,7 @@ import { inject, onMounted, ref } from 'vue';
 import gradientComposable from '../assets/gradientComposable.js'
 const { blurActive, blurSpread, colorActive, colorStrength } = inject('decorations', { blurActive: false, blurSpread: 100, colorActive: false, colorStrength: 1 })
 const stop0 = ref(null), stop1 = ref(null), stop2 = ref(null), stop3 = ref(null), stop4 = ref(null), stop5 = ref(null)
-const blurMax = ref(6)
+const blurMax = ref(3)
 
 //NO CHANGES AS OF 04.29.24
 

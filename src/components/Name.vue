@@ -15,7 +15,7 @@ const { animationActive, blurActive, blurSpread, colorActive, colorStrength, eff
     effects: true
 })
 const stop0 = ref(null), stop1 = ref(null), stop2 = ref(null), stop3 = ref(null), stop4 = ref(null), stop5 = ref(null)
-const blurMax = ref(3)
+const blurMax = ref(1.5)
 
 
 const nameA = ref(null);
