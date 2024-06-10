@@ -121,6 +121,7 @@ onMounted(() => {
   <Decorations v-model:animationActive='animationActive' v-model:animationSpeed='animationSpeed'
     v-model:blurActive='blurActive' v-model:blurSpread='blurSpread' v-model:colorActive='colorActive'
     v-model:colorStrength='colorStrength' v-model:effects='effects' />
+  <div class="spacer"></div>
   <Name @disablePreview="disablePreview" />
   <Technologies :key="componentKey" />
   <SectionBreak :key="componentKey" id="project" @setPosition="(top) => setPosition('project', top)" />
@@ -139,6 +140,7 @@ onMounted(() => {
   <Resume />
   <SectionBreak id="foot" />
   <Foot />
+  <div class="spacer"></div>
 </template>
 
 <style>
@@ -153,5 +155,10 @@ onMounted(() => {
 .section.title.portrait {
   text-align: left;
   font-size: calc(13.5vw + 10px);
+}
+
+.spacer {
+  width: 100%;
+  height: 15vh;
 }
 </style>

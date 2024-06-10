@@ -178,13 +178,9 @@ SCRIPT SETUP LAYOUT:
         <svg id="name-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100">
             <defs>
                 <filter id="name-blur" x="-2" y="-2" height="24" width="24">
-                    <feBlend in="name-blur" />
-                    <feGaussianBlur ref="nameDeviation" in="sourceGraphic"
-                        :stdDeviation="blurMax * (blurSpread / 100)" />
-                    <feMerge>
-                        <feMergeNode in="SourceGraphic" />
-                        <feMergeNode />
-                    </feMerge>
+                    <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
+                    <feBlend in="SourceGraphic" in2="blur" mode="normal" />
+                    <feGaussianBlur stdDeviation="0.5" />
                 </filter>
                 <linearGradient id="name-gradient" x1="0" y1="0" x2="100%" y2="0" gradientUnits="userSpaceOnUse">
                     <stop ref='stop0' offset="0.0" :stop-opacity="colorStrength" stop-color="#E057F2" />
