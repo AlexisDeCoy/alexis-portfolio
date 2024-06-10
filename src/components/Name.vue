@@ -15,7 +15,7 @@ const { animationActive, blurActive, blurSpread, colorActive, colorStrength, eff
     effects: true
 })
 const stop0 = ref(null), stop1 = ref(null), stop2 = ref(null), stop3 = ref(null), stop4 = ref(null), stop5 = ref(null)
-const blurMax = ref(2.5)
+const blurMax = ref(3)
 
 
 const nameA = ref(null);
@@ -180,7 +180,6 @@ SCRIPT SETUP LAYOUT:
                 <filter id="name-blur" x="-2" y="-2" height="24" width="24">
                     <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
                     <feBlend in="SourceGraphic" in2="blur" mode="normal" />
-                    <feGaussianBlur stdDeviation="0.5" />
                 </filter>
                 <linearGradient id="name-gradient" x1="0" y1="0" x2="100%" y2="0" gradientUnits="userSpaceOnUse">
                     <stop ref='stop0' offset="0.0" :stop-opacity="colorStrength" stop-color="#E057F2" />
@@ -191,8 +190,8 @@ SCRIPT SETUP LAYOUT:
                     <stop ref='stop5' offset="1.0" :stop-opacity="colorStrength" stop-color="#5D04D9" />
                 </linearGradient>
             </defs>
-            <text :class="{ 'preview': preview }" x=251 y="45" width="500" stroke-width="1" fill="none"
-                font-size="95.1px" dominant-baseline="middle" text-anchor="middle"
+            <text :class="{ 'preview': preview }" x=251 y="78" width="500" stroke-width="1" fill="none"
+                font-size="95.1px" text-anchor="middle"
                 :stroke="colorActive ? 'url(#name-gradient)' : '#fff'">
                 <tspan ref="nameA" :filter="aBlur ? 'url(#name-blur)' : blurActive ? 'url(#name-blur)' : 'none'"
                     :opacity="preview ? 0 : 1">A</tspan>

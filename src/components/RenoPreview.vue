@@ -26,7 +26,6 @@ onMounted(() => { gradientComposable(stop0, stop1, stop2, stop3, stop4, stop5) }
                 <filter :id="`${id}-blur`" x="-2" y="-2" height="24" width="24">
                     <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
                     <feBlend in="SourceGraphic" in2="blur" mode="normal" />
-                    <feGaussianBlur stdDeviation="0.5" />
                 </filter>
                 <linearGradient :id="`${id}-gradient`" x1="0" y1="0" x2="100%" y2="0" gradientUnits="userSpaceOnUse">
                     <stop ref='stop0' offset="0.0" :stop-opacity="colorStrength" stop-color="#E057F2" />

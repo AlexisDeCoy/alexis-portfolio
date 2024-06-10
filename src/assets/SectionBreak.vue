@@ -38,7 +38,6 @@ SCRIPT SETUP LAYOUT:
       <filter :id="`${id}-break-blur`" x="-20" y="-20" height="150" width="150">
         <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
         <feBlend in="SourceGraphic" in2="blur" mode="normal" />
-        <feGaussianBlur stdDeviation="0.5" />
       </filter>
       <linearGradient :id="`${id}-break-gradient`" x1="0" y1="0" x2="100%" y2="0" gradientUnits="userSpaceOnUse">
         <stop ref='stop0' offset="0.0" :stop-opacity="colorStrength" stop-color="#E057F2" />
