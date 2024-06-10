@@ -1,7 +1,7 @@
 <script setup>
 import { computed, inject, onMounted, ref } from 'vue';
 import gradientComposable from '../assets/gradientComposable.js'
-import TechIcons from '@/assets/icons/TechIcons';
+import TechIcons from '../assets/data/TechIcons.js';
 
 // ADD LINKS TO ICON GROUPS
 // ADD TRANSITIONS CLASS FOR BUTTON UNDERLINE
@@ -115,7 +115,7 @@ SCRIPT SETUP LAYOUT:
             </linearGradient>
         </defs>
         <g v-for="i in TechIcons.length - remainingIconQuantity">
-            <rect :x="horizontalPosition(i)" :y="verticalPosition(i)" width="210" height="98" rx="32"
+            <rect id="tech-svg-wrapper" :x="horizontalPosition(i)" :y="verticalPosition(i)" width="210" height="98" rx="32"
                 :fill="colorActive ? `url(#tech-gradient-${i})` : '#fff'"
                 :filter="blurActive ? `url(#tech-blur-${i})` : 'none'" />
             <rect :x="horizontalPosition(i) + 5" :y="verticalPosition(i) + 5" width="200" height="88" fill="#181818"

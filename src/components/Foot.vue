@@ -20,19 +20,19 @@ SCRIPT SETUP LAYOUT:
         </div>
         <div>
             <div class="contact">
-                <img src="../assets/icons/github.svg" alt="GitHub Icon">
+                <img src="/icons/github.svg" alt="GitHub Icon">
                 <a href="https://github.com/AlexisDeCoy">@alexisdecoy</a>
-                <a class="img-link" href="https://github.com/AlexisDeCoy"><img src="../assets/icons/link-arrow.svg" alt="Link Arrow"></a>
+                <a class="img-link" href="https://github.com/AlexisDeCoy"><img src="/icons/link-arrow.svg" alt="Link Arrow"></a>
             </div>
             <div class="contact">
                 <div class="logo"></div>
                 <a href="www.linkedin.com/in/alexis-decicco">Alexis DeCicco</a>
-                <a class="img-link" href="www.linkedin.com/in/alexis-decicco"><img src="../assets/icons/link-arrow.svg" alt="Link Arrow"></a>
+                <a class="img-link" href="www.linkedin.com/in/alexis-decicco"><img src="/icons/link-arrow.svg" alt="Link Arrow"></a>
             </div>
             <div class="contact">
-                <img src="../assets/icons/email.svg" alt="Email Icon">
+                <img src="/icons/email.svg" alt="Email Icon">
                 <a href="mailto:alexiscdecicco@gmail.com">alexiscdecicco@gmail.com</a>
-                <a class="img-link" href="mailto:alexiscdecicco@gmail.com"><img src="../assets/icons/link-arrow.svg" alt="Link Arrow"></a>
+                <a class="img-link" href="mailto:alexiscdecicco@gmail.com"><img src="/icons/link-arrow.svg" alt="Link Arrow"></a>
             </div>
         </div>
 
@@ -108,10 +108,11 @@ a {
 }
 
 .img-link {
-    height: 60%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    width: fit-content;
+    display: flex;
+    align-items: center;
 }
 
 img {
@@ -122,7 +123,7 @@ img {
     width: 30px;
     height: 30px;
     background: #fff;
-    mask-image: url('../assets/icons/linkedin.png');
+    mask-image: url('/icons/linkedin.png');
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;

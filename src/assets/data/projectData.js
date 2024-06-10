@@ -14,19 +14,19 @@ const projectData = [
         },
         imgs: [
             {
-                img: '/src/assets/projectImgs/theHouse/textSm.png',
+                img: '/projectImgs/theHouse/textSm.png',
                 alt: 'Gameplay'
             },
             {
-                img: '/src/assets/projectImgs/theHouse/inventorySm.png',
+                img: '/projectImgs/theHouse/inventorySm.png',
                 alt: 'Inventory Item'
             },
             {
-                img: '/src/assets/projectImgs/theHouse/loginSm.png',
+                img: '/projectImgs/theHouse/loginSm.png',
                 alt: 'Log In'
             },
             {
-                img: '/src/assets/projectImgs/theHouse/puzzleSm.png',
+                img: '/projectImgs/theHouse/puzzleSm.png',
                 alt: 'Puzzle'
             }
         ]
@@ -47,19 +47,19 @@ const projectData = [
         },
         imgs: [
             {
-                img: '/src/assets/projectImgs/bPortfolio/homeSm.png',
+                img: '/projectImgs/bPortfolio/homeSm.png',
                 alt: 'Home Page'
             },
             {
-                img: '/src/assets/projectImgs/bPortfolio/printsSm.png',
+                img: '/projectImgs/bPortfolio/printsSm.png',
                 alt: 'Prints'
             },
             {
-                img: '/src/assets/projectImgs/bPortfolio/detailsSm.png',
+                img: '/projectImgs/bPortfolio/detailsSm.png',
                 alt: 'Details'
             },
             {
-                img: '/src/assets/projectImgs/bPortfolio/contactSm.png',
+                img: '/projectImgs/bPortfolio/contactSm.png',
                 alt: 'Contact Info'
             }
         ]
@@ -80,19 +80,19 @@ const projectData = [
         },
         imgs: [
             {
-                img: '/src/assets/projectImgs/set/boardSm.png',
+                img: '/projectImgs/set/boardSm.png',
                 alt: 'Board'
             },
             {
-                img: '/src/assets/projectImgs/set/howToSm.png',
+                img: '/projectImgs/set/howToSm.png',
                 alt: 'How To Play'
             },
             {
-                img: '/src/assets/projectImgs/set/customSm.png',
+                img: '/projectImgs/set/customSm.png',
                 alt: 'Customizations'
             },
             {
-                img: '/src/assets/projectImgs/set/setSm.png',
+                img: '/projectImgs/set/setSm.png',
                 alt: 'Set!'
             }
         ]
@@ -111,19 +111,19 @@ const projectData = [
         },
         imgs: [
             {
-                img: '/src/assets/projectImgs/mastermind/difficultSm.png',
+                img: '/projectImgs/mastermind/difficultSm.png',
                 alt: 'Difficult Board'
             },
             {
-                img: '/src/assets/projectImgs/mastermind/easySm.png',
+                img: '/projectImgs/mastermind/easySm.png',
                 alt: 'Easy Board'
             },
             {
-                img: '/src/assets/projectImgs/mastermind/winSm.png',
+                img: '/projectImgs/mastermind/winSm.png',
                 alt: 'Win!'
             },
             {
-                img: '/src/assets/projectImgs/mastermind/lossSm.png',
+                img: '/projectImgs/mastermind/lossSm.png',
                 alt: 'Loss'
             }
         ]
@@ -146,19 +146,19 @@ const projectData = [
         },
         imgs: [
             {
-                img: '/src/assets/projectImgs/aPortfolio/endIntroSm.png',
+                img: '/projectImgs/aPortfolio/endIntroSm.png',
                 alt: 'Intro'
             },
             {
-                img: '/src/assets/projectImgs/aPortfolio/optionsSm.png',
+                img: '/projectImgs/aPortfolio/optionsSm.png',
                 alt: 'Options'
             },
             {
-                img: '/src/assets/projectImgs/aPortfolio/fullScreenSm.png',
+                img: '/projectImgs/aPortfolio/fullScreenSm.png',
                 alt: 'Image Modal'
             },
             {
-                img: '/src/assets/projectImgs/aPortfolio/midIntroSm.png',
+                img: '/projectImgs/aPortfolio/midIntroSm.png',
                 alt: 'Mid Intro'
             },
         ]

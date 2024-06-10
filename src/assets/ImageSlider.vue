@@ -40,17 +40,17 @@ onMounted(() => {
         <div ref="afterContainer" class="after-container" :style="{ width: afterContainerWidth }">
             <img class="afterImg" :src="props.imgs.after" alt="After Image" :style="afterImgStyles">
             <div ref="sliderBar" :class="sliderBarClasses" :style="{ left: sliderPosition + '%' }"></div>
-            <img src="../assets/icons/slider-arrows.svg" :class="sliderThumbClasses" alt="Slider Arrows"
+            <img src="/icons/slider-arrows.svg" :class="sliderThumbClasses" alt="Slider Arrows"
                 :style="{ left: sliderPosition + '%' }">
             <input ref="imgSlider" type="range" class="slider" min="0" max="100" v-model="sliderPosition"
-                @mouseover="sliderBarActive = true; sliderThumbActive = true"
-                @mouseout="sliderBarActive = false; sliderThumbActive = false">
+                @mouseenter="sliderBarActive = true; sliderThumbActive = true"
+                @mouseleave="sliderBarActive = false; sliderThumbActive = false">
         </div>
         <div class="open" v-if="!props.fullScreen" @click.stop="emit('toggleFullScreen');">
-            <img src="../assets/icons/link-arrow.svg" />
+            <img src="/icons/link-arrow.svg" />
         </div>
     </div>
-    <img class="close" v-if="props.fullScreen" src="../assets/icons/cross.svg" @click.stop="emit('toggleFullScreen');">
+    <img class="close" v-if="props.fullScreen" src="/icons/cross.svg" @click.stop="emit('toggleFullScreen');">
 </template>
 
 <style scoped>

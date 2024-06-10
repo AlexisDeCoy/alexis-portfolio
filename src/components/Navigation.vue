@@ -135,6 +135,10 @@ h1 {
   font-size: calc(1.5vw + 10px);
 }
 
+.portrait h1 {
+  font-size: calc(3.5vw + 10px);
+}
+
 h1:hover span {
   text-decoration: underline;
 }

@@ -378,7 +378,7 @@ input[type="checkbox"]:checked {
 }
 
 input[type="checkbox"]:not(:disabled):checked {
-    background-image: url('../assets/icons/checkmark.svg');
+    background-image: url('/icons/checkmark.svg');
 }
 
 input[type="checkbox"]:disabled {
@@ -387,7 +387,7 @@ input[type="checkbox"]:disabled {
 }
 
 input[type="checkbox"]:disabled:checked {
-    background-image: url('../assets/icons/checkmark.svg');
+    background-image: url('/icons/checkmark.svg');
 }
 
 input[type="checkbox"]:not(:disabled):hover {

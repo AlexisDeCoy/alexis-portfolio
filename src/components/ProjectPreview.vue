@@ -1,6 +1,6 @@
 <script setup>
 import { computed, inject, onMounted, ref } from 'vue';
-import ImageModal from './ImageModal.vue';
+import ImageModal from '../assets/ImageModal.vue';
 import gradientComposable from '../assets/gradientComposable.js'
 
 const { blurActive, blurSpread, colorActive, colorStrength } = inject('decorations', { blurActive: false, blurSpread: 100, colorActive: false, colorStrength: 1 })

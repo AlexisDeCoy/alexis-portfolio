@@ -1,5 +1,5 @@
 <script setup>
-import resumeData from '@/assets/resumeData';
+import resumeData from '@/assets/data/resumeData';
 const { skills, projects, experience, education } = resumeData;
 
 //FINISH resumeData, add links
@@ -196,7 +196,7 @@ h3 {
 
 h3.contact {
     text-align: center;
-    margin: 0 5%;
+    margin: 2vh 5%;
 }
 
 h3.content,
@@ -241,7 +241,7 @@ h5 {
 
 .projects .contact {
     text-align: center;
-    margin-top: 1vh;
+    margin: 1vh 0 0;
     color: #fff;
 }
 

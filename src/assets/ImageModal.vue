@@ -61,7 +61,7 @@ watch(() => props.fullScreen, () => {
     <div :class="{ 'active': i - 1 === imageIndex, 'marker': true }" v-for="i in props.imgs.length"
       @click.stop="(() => changeImage(false, i - 1))"></div>
   </div>
-  <img class="close" v-if="props.fullScreen" src="../assets/icons/cross.svg" @click.stop="emit('toggleFullScreen');">
+  <img class="close" v-if="props.fullScreen" src="/icons/cross.svg" @click.stop="emit('toggleFullScreen');">
 </template>
 
 <style scoped>

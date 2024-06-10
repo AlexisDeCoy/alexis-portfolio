@@ -31,4 +31,8 @@ coverage
 
 # Folders
 unused/*
+netlify.toml
 
+
+# Local Netlify folder
+.netlify

@@ -7,11 +7,21 @@ import Technologies from './components/Technologies.vue';
 import Foot from './components/Foot.vue';
 import SectionBreak from './assets/SectionBreak.vue';
 import ProjectPreview from './components/ProjectPreview.vue';
-import projectData from './assets/projectData';
+import projectData from './assets/data/projectData';
 import RenoPreview from './components/RenoPreview.vue';
-import renoData from './assets/renoData';
+import renoData from './assets/data/renoData';
 import Resume from './components/Resume.vue';
 import PartBreak from './assets/PartBreak.vue'
+
+//MOBILE FIXES 06.10.24
+//repair image routes ?
+// adjust spacing for contact info in resume ?
+//increase portrait nav font-size ?
+//disable click-hover for slider active ?
+//fix Name svg gradient placement and potential top padding clip
+//resize slider/modal container to fit svg background
+//fix blur for: Technologies, Name, Previews - adjust blend mode so primary shape displays first
+//option to increase legibility for resume --light-grey
 
 //ADD CSS VAR FOR DARK-GREY-TRANSLUCENT (#181818ca)
 
