@@ -160,5 +160,6 @@ onMounted(() => {
 .spacer {
   width: 100%;
   height: 15vh;
+  min-height: 50px;
 }
 </style>

@@ -227,6 +227,7 @@ END TEMPLATE
     top: 50%;
     left: 100%;
     height: 10vh;
+    min-height: 40px;
     width: 40px;
     transform: translateY(-50%);
     border: none;
