@@ -177,7 +177,7 @@ SCRIPT SETUP LAYOUT:
     <div :class="{ preview: preview, effects: effects, container: true }" @click.stop="preview ? abortPreview() : ''">
         <svg id="name-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100">
             <defs>
-                <filter id="name-blur" x="-2" y="-2" height="24" width="24">
+                <filter id="name-blur" x="0" y="0" height="1" width="1">
                     <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
                     <feBlend in="SourceGraphic" in2="blur" mode="normal" />
                 </filter>

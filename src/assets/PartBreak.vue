@@ -3,7 +3,7 @@ import { inject, onMounted, ref } from 'vue';
 import gradientComposable from '../assets/gradientComposable.js'
 const { blurActive, blurSpread, colorActive, colorStrength } = inject('decorations', { blurActive: false, blurSpread: 100, colorActive: false, colorStrength: 1 })
 const stop0 = ref(null), stop1 = ref(null), stop2 = ref(null), stop3 = ref(null), stop4 = ref(null), stop5 = ref(null)
-const blurMax = ref(5)
+const blurMax = ref(3)
 const props = defineProps({id : String})
 
 //NO CHANGES AS OF 05.01.24
@@ -32,7 +32,7 @@ SCRIPT SETUP LAYOUT:
 <template>
   <svg :id="`${props.id}-spacer`" ref="title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
     <defs>
-      <filter :id="`${props.id}-spacer-blur`" x="-20" y="-20" height="150" width="150">
+      <filter :id="`${props.id}-spacer-blur`" x="-1" y="-1" height="3" width="3">
         <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
         <feBlend in="SourceGraphic" in2="blur" mode="normal" />
       </filter>

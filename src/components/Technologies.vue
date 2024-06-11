@@ -96,7 +96,7 @@ SCRIPT SETUP LAYOUT:
 <template>
     <svg id="tech-svg" xmlns="http://www.w3.org/2000/svg" :viewBox="viewBox">
         <defs v-for="i in TechIcons.length">
-            <filter :id="`tech-blur-${i}`" x="-2" y="-2" height="24" width="24">
+            <filter :id="`tech-blur-${i}`" x="-1" y="-1" height="3" width="3">
                 <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
                 <feBlend in="SourceGraphic" in2="blur" mode="normal" />
             </filter>
