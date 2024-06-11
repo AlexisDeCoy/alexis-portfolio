@@ -357,9 +357,9 @@ label {
 }
 
 input[type="checkbox"] {
-    aspect-ratio: 1;
     box-sizing: border-box;
-    height: 60%;
+    height: 30px;
+    width: 30px;
     position: relative;
     top: 50%;
     left: 0;

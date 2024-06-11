@@ -15,6 +15,7 @@ import PartBreak from './assets/PartBreak.vue'
 
 // FIXES NEEDED AS OF 06.10.24
 //finish comments and component notes
+//fix iOS Safari portrait decoration tab position delay
 //font-size range decoration?
 //consolidate Preview components to 1?
 //option to increase legibility for resume --light-grey
