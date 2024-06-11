@@ -9,8 +9,6 @@ const colorActive = defineModel('colorActive')
 const colorStrength = defineModel('colorStrength')
 const effects = defineModel('effects')
 
-//NO CHANGES AS OF 04.29.24
-
 const orientation = inject('orientation', { orientation: 'landscape' })
 const decorationsOpen = ref(false)
 const containerClasses = computed(() => ({
@@ -185,7 +183,7 @@ END TEMPLATE
     transform: translate(-100%, 0);
     border-radius: 0 20px 20px 0;
     box-shadow: none;
-    background: #181818ca;
+    background: var(--dark-grey-translucent);
     backdrop-filter: blur(10px);
 }
 

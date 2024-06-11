@@ -5,9 +5,7 @@ const { blurActive, blurSpread, colorActive, colorStrength } = inject('decoratio
 const stop0 = ref(null), stop1 = ref(null), stop2 = ref(null), stop3 = ref(null), stop4 = ref(null), stop5 = ref(null)
 const blurMax = ref(6)
 
-//NO CHANGES AS OF 04.29.24
-
-const props = defineProps({id : String})
+const props = defineProps({ id: String })
 const emit = defineEmits(['setPosition'])
 const title = ref(null)
 
@@ -27,7 +25,8 @@ SCRIPT SETUP LAYOUT:
         stop0-stop5 - ELEMENT REFS FOR EACH GRADIENT STOP
         blurMax - MAX STD DEV FOR BLUR SCALING
     SVG REFS & VARS:
-        emit - setPosition, SET WINDOW Y FOR NAV LINKS
+        PROPS: id - SECTION NAME, FOR SVG DEFs PER SECTION
+        EMIT: setPosition - SET WINDOW Y FOR NAV LINKS
         title - SVG ELEMENT REF
     onMounted - ATTACH GRADIENT COMPOSABLE, EMIT setPosition, GIVEN POSITION DEFINED IN app.vue
 -->
@@ -58,11 +57,11 @@ SCRIPT SETUP LAYOUT:
 
 <!--
 TEMPLATE LAYOUT:
-    SVG WRAPPER - SET TEMPLATE REF, 1000 x 100 VIEWBOX
+    SVG WRAPPER - {id}-break, SET TEMPLATE REF, 1000 x 100 VIEWBOX
         defs
-            filter - BLUR, break-blur
+            filter - BLUR, {id}-break-blur
               feGaussianBlur - STD-DEV BY blurMax*blurSpread
-            linear-gradient - break-gradient, USERSPACEONUSE
+            linear-gradient - {id}-break-gradient, USERSPACEONUSE
         path - STROKE-WIDTH-10, FILL-NONE, STROKE-GRADIENT/WHITE, FILTER-BLUR/NONE
 END TEMPLATE
 -->
@@ -76,4 +75,4 @@ svg {
 <!--
 STYLE LAYOUT:
     svg - WIDTH-100
--->./gradientComposable.js
+-->

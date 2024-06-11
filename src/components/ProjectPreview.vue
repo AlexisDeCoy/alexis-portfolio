@@ -7,9 +7,6 @@ const { blurActive, blurSpread, colorActive, colorStrength } = inject('decoratio
 const stop0 = ref(null), stop1 = ref(null), stop2 = ref(null), stop3 = ref(null), stop4 = ref(null), stop5 = ref(null)
 const blurMax = computed(() => orientation.value === 'portrait' ? 12 : 16)
 
-//NO CHANGES AS OF 05.01.24
-//MAY NEED INDEX IDs FOR SVG DEFS
-
 const orientation = inject('orientation', { orientation: 'landscape' })
 const { id, project } = defineProps({ id: String, project: Object })
 const fullScreen = ref(false)

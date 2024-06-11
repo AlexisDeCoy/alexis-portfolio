@@ -2,8 +2,6 @@
 import { inject, onMounted, ref, watchEffect } from 'vue';
 import gradientComposable from '../assets/gradientComposable.js'
 
-//NO CHANGES AS OF 06.04.24
-
 const emit = defineEmits(['disablePreview'])
 const preview = inject('preview', { preview: true })
 const { animationActive, blurActive, blurSpread, colorActive, colorStrength, effects } = inject('decorations', {

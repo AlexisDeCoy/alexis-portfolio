@@ -3,7 +3,6 @@ import { inject, onMounted, ref } from 'vue';
 import gradientComposable from '../assets/gradientComposable.js'
 import TechIcons from '../assets/data/TechIcons.js';
 
-// ADD LINKS TO ICON GROUPS
 // ADD TRANSITIONS CLASS FOR BUTTON UNDERLINE
 // MOVE BEBAS + FONTSIZE TO GLOBAL?
 
@@ -152,9 +151,9 @@ SCRIPT SETUP LAYOUT:
 TEMPLATE LAYOUT:
     SVG WRAPPER - DEFINE VIEWBOX, FIT GRADIENT
         defs
-            filter - tech-blur
+            filter - tech-blur-{i}
                 feGaussianBlur - STD-DEV BY blurMax*blurSpread
-            linear-gradient - tech-gradient, USERSPACEONUSE
+            linear-gradient - tech-gradient-{i}, USERSPACEONUSE
         g - V-FOR ICONS EXCLUDING REMAINING
             rect - GRADIENT CONTAINER, 210 x 98, FILL: colorActive ?, FILTER: blurActive ?
                 HORIZONTAL: OUTSIDE MARGIN 50, GAP OF 20
@@ -196,5 +195,5 @@ STYLE LAYOUT:
     svg - FULL WIDTH OF WINDOW
     g - POINTER CURSOR
         :hover - UNDERLINE
-    text - BEBAS NEUE
--->../assets/gradientComposable.js
+    text - BEBAS NEUE, MIN-FONT-SIZE
+-->

@@ -3,12 +3,11 @@ import { computed, inject, ref } from 'vue';
 const { effects } = inject('decorations', { effects: true })
 const preview = inject('preview', { preview: true })
 const orientation = inject('orientation', { orientation: 'landscape' })
+
 const props = defineProps({ projectPosition: Number, renoPosition: Number, resumePosition: Number })
 const active = ref('alexis_decicco');
 const navOpen = ref(false)
-
-//NO NEEDED CHANGES AS OF 04.28.24
-
+const highlight = ref([false, false, false, false])
 const navItems = computed(() => [
   { title: 'projects', activeTitle: 'Projects', position: props.projectPosition },
   { title: 'renovations', activeTitle: 'Renovations', position: props.renoPosition },
@@ -40,7 +39,8 @@ SCRIPT SETUP LAYOUT:
     INJECT: orientation - DEFINE WINDOW ORIENTATION (DROPDOWN / SPREAD)
     PROPS: projectPosition, renoPosition, resumePosition - WINDOW Y POSITION FOR SCROLLTO
     active - TITLE OF CURRENT SECTION, DEFINED BY WINDOW Y POSITION
-    open - DROPDOWN OPEN (MOBILE)
+    navOpen - DROPDOWN OPEN (MOBILE)
+    highlight - REPLACEMENT FOR HOVER EFFECT USING MOUSEENTER/LEAVE
     navItems - OBJECT FOR LINK TITLES AND POSITIONS
   NAV FUNCTIONS:
     ADD EVENT LISTENER FOR WINDOW SCROLL
@@ -55,12 +55,14 @@ SCRIPT SETUP LAYOUT:
       <div></div>
       <div v-if="!navOpen"></div>
     </button>
-    <h1>&#60<span :class="'alexis_decicco' === active ? 'component' : 'tag-declare'" @click="scroll(0)">
+    <h1 :class="{ highlight: highlight[0] }" @click="scroll(0); navOpen = false" @mouseenter="highlight[0] = true"
+      @mouseleave="highlight[0] = false">&#60<span :class="'alexis_decicco' === active ? 'component' : 'tag-declare'">
         {{ 'alexis_decicco' === active ? 'Alexis_DeCicco' : 'alexis_decicco'
         }}</span>/&#62</h1>
-    <template v-for="item in navItems">
-      <h1 v-if="orientation !== 'portrait' || navOpen">&#60<span
-          :class="item.title === active ? 'component' : 'tag-declare'" @click="scroll(item.position)">
+    <template v-for="(item, i) in navItems">
+      <h1 v-if="orientation !== 'portrait' || navOpen" :class="{ highlight: highlight[i + 1] }"
+        @click="scroll(item.position); navOpen = false" @mouseenter="highlight[i + 1] = true" @mouseleave="highlight[i + 1] = false">
+        &#60<span :class="item.title === active ? 'component' : 'tag-declare'">
           {{ item.title === active ? item.activeTitle : item.title
           }}</span>/&#62</h1>
     </template>
@@ -70,10 +72,10 @@ SCRIPT SETUP LAYOUT:
 <!--
 TEMPLATE LAYOUT:
   nav - DEFINE ORIENTATION (FOR DROPDOWN), EFFECTS (FOR OPACITY TRANSITION)
-    button - FOR PORTRAIT OPEN DROPDOWN
+    button - FOR PORTRAIT OPEN/CLOSE DROPDOWN
       div - HAMBURGER (IF CLOSED) / MINUS (IF OPEN) ICON
-    h1 - FOR NAME, SEPARATE TO SHOW EVEN WHEN DROPDOWN IS CLOSED, INCLUDES OPENING AND CLOSING </>
-      span - LINK NAME, CHANGES STYLE DEPENDING ON IF active
+    h1 - FOR NAME, SEPARATE TO SHOW EVEN WHEN DROPDOWN IS CLOSED, INCLUDES OPENING AND CLOSING </>, highlight ? mouseenter : mouseleave
+      span - LINK NAME, CHANGES STYLE DEPENDING ON IF active/highlight
     template - V FOR EACH LINK IN navItems (IF OPEN ON PORTRAIT)
       h1 - V IF LANDSCAPE OR navOpen
         span
@@ -82,7 +84,7 @@ END TEMPLATE
 
 <style scoped>
 nav {
-  background: #181818ca;
+  background: var(--dark-grey-translucent);
   backdrop-filter: blur(10px);
   box-shadow: 0 0 10px 5px var(--tag-declare-color);
   display: flex;
@@ -139,7 +141,7 @@ h1 {
   font-size: calc(3.5vw + 10px);
 }
 
-h1:hover span {
+.effects .highlight span {
   text-decoration: underline;
 }
 </style>
@@ -153,5 +155,6 @@ STYLE LAYOUT:
   .nav-open - STYLE FOR MOBILE DROPDOWN BUTTON: D-FLEX-COLUMN, BUTTON COLOR, ABSOLUTE, TAG-DECLARE
     div - HAMBURGER / MINUS LINES: COLOR, SIZING
   h1 - POINTER, FONT SIZE
-    :hover - UNDERLINE LINK
+    .portrait - LARGER-FONT
+  .highlight span - HOVER UNDERLINE
 -->

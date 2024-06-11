@@ -3,6 +3,8 @@ import { computed, inject, onMounted, ref } from 'vue';
 import ImageSlider from '../assets/ImageSlider.vue';
 import gradientComposable from '../assets/gradientComposable.js'
 
+//consolodate with ProjectPreview?
+
 const { blurActive, blurSpread, colorActive, colorStrength } = inject('decorations', { blurActive: false, blurSpread: 100, colorActive: false, colorStrength: 1 })
 const stop0 = ref(null), stop1 = ref(null), stop2 = ref(null), stop3 = ref(null), stop4 = ref(null), stop5 = ref(null)
 const blurMax = computed(() => orientation.value === 'portrait' ? 12 : 16)

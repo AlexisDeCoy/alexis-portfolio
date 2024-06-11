@@ -13,33 +13,28 @@ import renoData from './assets/data/renoData';
 import Resume from './components/Resume.vue';
 import PartBreak from './assets/PartBreak.vue'
 
-//MOBILE FIXES 06.10.24
-//repair image routes !
-// adjust spacing for contact info in resume !
-//increase portrait nav font-size !
-//disable click-hover for slider active !
-
-//fix Name svg gradient placement and potential top padding clip
-//resize slider/modal container to fit svg background
-//fix blur for: Technologies, Name, Previews -
-// adjust blend mode so primary shape displays first, maybe decrease stddev
+// FIXES NEEDED AS OF 06.10.24
+//finish comments and component notes
+//font-size range decoration?
+//consolidate Preview components to 1?
 //option to increase legibility for resume --light-grey
-
-//ADD CSS VAR FOR DARK-GREY-TRANSLUCENT (#181818ca)
+//resume colors
+//add resume links
 
 //COMMENTS COMPLETE FOR:
+// * Not updated for 06.10 mobile fixes
+//assets.gradientComposable
+
+
 //assets.ProjectBreak
 //assets.SectionBreak
-//Decorations
+//Decorations *
 //Foot
-//gradientComposable
-
-
-//Name
+//Name *
 //Navigation
-//ProjectPreview
+//ProjectPreview *
 
-//Resume
+//Resume *
 //Technologies
 
 

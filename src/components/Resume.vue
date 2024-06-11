@@ -2,7 +2,6 @@
 import resumeData from '@/assets/data/resumeData';
 const { skills, projects, experience, education } = resumeData;
 
-//FINISH resumeData, add links
 //ADD year for projects?
 </script>
 

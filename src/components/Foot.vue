@@ -9,9 +9,6 @@ SCRIPT SETUP LAYOUT:
     INJECT: orientation - DEFINE WINDOW ORIENTATION (FLEX-COLUMN / FLEX)
 -->
 
-<!-- ADD LINKS FOR GITHUB, EMAIL, LINKEDIN -->
-<!-- CHANGE h2 TO a -->
-
 <template>
     <div :class="{ portrait: orientation === 'portrait', container: true }">
         <div>
@@ -48,8 +45,10 @@ TEMPLATE LAYOUT:
         div
             div - contact, FOR GitHub THRU email
                 img - LOGO (PNG FOR LinkedIn)
-                h2 - @ / ADDRESS
-                img - LINK ARROW
+                a - LINK
+                    h2 - @ / ADDRESS
+                a - LINK
+                    img - LINK ARROW
 END TEMPLATE
 -->
 
@@ -103,7 +102,7 @@ a {
     font-size: calc(2vw + 5px);
     color: #fff;
     margin: 3px 10px 0 10px;
-    color: #569cd6;
+    color: var(--tag-declare-color);
     text-decoration: none;
 }
 
@@ -140,7 +139,7 @@ STYLE LAYOUT:
     h2 - FONT-SIZE, WHITE
     .contact - D-FLEX, ALIGN-CENTER, JUSTIFY-START
         .portrait -> - JUSTIFY-CENTER
-        h2 - MARGIN-T-R/L
+    a - MARGIN-T-R/L, FONT SIZE, tag-declare-color, DECORATION-NONE
     img - HEIGHT-60
     .logo - MASK: linkedin.png, MASK-SIZE-CONTAIN, MASK-REPEAT-NONE, MASK-POSITION-CENTER, WHITE
 -->

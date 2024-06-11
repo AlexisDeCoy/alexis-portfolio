@@ -4,11 +4,8 @@ import gradientComposable from '../assets/gradientComposable.js'
 const { blurActive, blurSpread, colorActive, colorStrength } = inject('decorations', { blurActive: false, blurSpread: 100, colorActive: false, colorStrength: 1 })
 const stop0 = ref(null), stop1 = ref(null), stop2 = ref(null), stop3 = ref(null), stop4 = ref(null), stop5 = ref(null)
 const blurMax = ref(6)
-const props = defineProps({id : String})
 
-//NO CHANGES AS OF 05.01.24
-
-const title = ref(null)
+const props = defineProps({ id: String })
 
 onMounted(() => {
   gradientComposable(stop0, stop1, stop2, stop3, stop4, stop5)
@@ -25,12 +22,12 @@ SCRIPT SETUP LAYOUT:
         stop0-stop5 - ELEMENT REFS FOR EACH GRADIENT STOP
         blurMax - MAX STD DEV FOR BLUR SCALING
     SVG REFS & VARS:
-        title - SVG ELEMENT REF
+        PROPS: id - project#/reno# FOR SVG DEFs PER PART
     onMounted - ATTACH GRADIENT COMPOSABLE
 -->
 
 <template>
-  <svg :id="`${props.id}-spacer`" ref="title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
+  <svg :id="`${props.id}-spacer`" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
     <defs>
       <filter :id="`${props.id}-spacer-blur`" x="-1" y="-2" width="3" height="5">
         <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
@@ -52,11 +49,11 @@ SCRIPT SETUP LAYOUT:
 
 <!--
 TEMPLATE LAYOUT:
-    SVG WRAPPER - SET TEMPLATE REF, 1000 x 100 VIEWBOX
+    SVG WRAPPER - {id}-spacer, SET TEMPLATE REF, 1000 x 100 VIEWBOX
         defs
-            filter - BLUR, spacer-blur
+            filter - BLUR, {id}-spacer-blur
               feGaussianBlur - STD-DEV BY blurMax*blurSpread
-            linear-gradient - spacer-gradient, USERSPACEONUSE
+            linear-gradient - {id}-spacer-gradient, USERSPACEONUSE
         rect - STROKE-0, FILL-GRADIENT/WHITE, FILTER-BLUR/NONE, 900 x 8
 END TEMPLATE
 -->
@@ -70,4 +67,4 @@ svg {
 <!--
 STYLE LAYOUT:
     svg - WIDTH-100
--->./gradientComposable.js
+-->
