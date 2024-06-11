@@ -56,7 +56,7 @@ SCRIPT SETUP LAYOUT:
         <svg :id="`${id}-svg`" xmlns="http://www.w3.org/2000/svg"
             :viewBox="orientation === 'portrait' ? '0 0 500 500' : '0 0 1000 480'" preserveAspectRatio="none">
             <defs>
-                <filter :id="`${id}-blur`" x="-2" y="-2" height="24" width="24">
+                <filter :id="`${id}-blur`" x="-1" y="-1" height="3" width="3">
                     <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
                     <feBlend in="SourceGraphic" in2="blur" mode="normal" />
                 </filter>

@@ -3,7 +3,7 @@ import { inject, onMounted, ref } from 'vue';
 import gradientComposable from '../assets/gradientComposable.js'
 const { blurActive, blurSpread, colorActive, colorStrength } = inject('decorations', { blurActive: false, blurSpread: 100, colorActive: false, colorStrength: 1 })
 const stop0 = ref(null), stop1 = ref(null), stop2 = ref(null), stop3 = ref(null), stop4 = ref(null), stop5 = ref(null)
-const blurMax = ref(3)
+const blurMax = ref(6)
 
 //NO CHANGES AS OF 04.29.24
 
@@ -35,7 +35,7 @@ SCRIPT SETUP LAYOUT:
 <template>
   <svg :id="`${id}-break`" ref="title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100">
     <defs>
-      <filter :id="`${id}-break-blur`" x="-20" y="-20" height="150" width="150">
+      <filter :id="`${id}-break-blur`" x="0" y="-1" height="3" width="1">
         <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
         <feBlend in="SourceGraphic" in2="blur" mode="normal" />
       </filter>

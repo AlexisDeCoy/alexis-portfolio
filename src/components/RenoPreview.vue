@@ -23,7 +23,7 @@ onMounted(() => { gradientComposable(stop0, stop1, stop2, stop3, stop4, stop5) }
     <div :class="{ portrait: orientation === 'portrait', 'reno-container': true }">
         <svg :id="`${id}-svg`" xmlns="http://www.w3.org/2000/svg" :viewBox="viewBox" preserveAspectRatio="none">
             <defs>
-                <filter :id="`${id}-blur`" x="-2" y="-2" height="24" width="24">
+                <filter :id="`${id}-blur`" x="-1" y="-1" height="3" width="3">
                     <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
                     <feBlend in="SourceGraphic" in2="blur" mode="normal" />
                 </filter>
