@@ -361,9 +361,11 @@ label {
 input[type="checkbox"] {
     aspect-ratio: 1;
     box-sizing: border-box;
-    height: calc(3vh + 1px);
-    width: calc(3vh + 1px);
-    margin: 9.5px 0 0 0;
+    height: 60%;
+    position: relative;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     border: 2px solid var(--attr-color);
     background-color: var(--tag-declare-color);
     appearance: none;
@@ -391,13 +393,13 @@ input[type="checkbox"]:disabled:checked {
     background-image: url('/icons/checkmark.svg');
 }
 
-input[type="checkbox"]:not(:disabled):hover {
+.effects input[type="checkbox"]:not(:disabled):hover {
     background-color: var(--attr-color);
     border: 2px solid var(--tag-declare-color);
-    transform: scale(1.1);
+    transform: translateY(-50%) scale(1.1);
 }
 
-input[type="checkbox"]:not(:disabled):checked:hover {
+.effects input[type="checkbox"]:not(:disabled):checked:hover {
     border: 2px solid var(--attr-color);
     background-color: var(--tag-declare-color);
 }
