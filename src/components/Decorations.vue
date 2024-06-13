@@ -196,7 +196,7 @@ END TEMPLATE
     top: 100%;
     height: 50vh;
     transform: none;
-    /* border-radius: 20px 20px 0 0; */
+    border-radius: 20px 20px 0 0;
 }
 
 .decorations-container.preview {

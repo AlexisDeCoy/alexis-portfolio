@@ -106,8 +106,7 @@ watchEffect(() => {
 
 onMounted(() => {
   document.body.classList.add('prevent-scroll')
-  document.body.wid
-  setTimeout(() => { window.scrollTo(0, 0) }, 100)
+  setTimeout(() => { window.scrollTo(0, 0) }, 150)
 })
 </script>
 
