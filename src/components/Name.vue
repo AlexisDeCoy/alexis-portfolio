@@ -207,11 +207,11 @@ SCRIPT SETUP LAYOUT:
         'Full Stack Web Developer' }}</h1>
             <h1>&#60/<span class="tag-declare">h1</span>&#62</h1>
         </div>
-        <!-- <Transition v-if="effects">
+        <Transition v-if="effects">
             <div class="disclaimer" v-if="preview">
                 <h1>click to disable all effects</h1>
             </div>
-        </Transition> -->
+        </Transition>
     </div>
 </template>
 
@@ -278,7 +278,7 @@ tspan {
 }
 
 .typed {
-    border-right: 2px solid #fff;
+    border-right: 2px solid transparent;
     letter-spacing: 2px;
     color: #fff;
 }

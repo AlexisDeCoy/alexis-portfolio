@@ -1,6 +1,6 @@
 <script setup>
 import { computed, inject, onMounted, ref, watch } from 'vue';
-const props = defineProps({ fullScreen: Boolean, imgs: Object })
+const props = defineProps({ fullScreen: Boolean, imgs: Object, fullImgs: Object })
 const { effects } = inject('decorations', { effects: false })
 const emit = defineEmits(['toggleFullScreen'])
 
@@ -10,7 +10,7 @@ const imgClasses = computed(() => ({ 'full-screen': props.fullScreen, beforeImg:
 const beforeImg = ref(null)
 const afterContainerWidth = ref("100%")
 
-const sliderPosition = ref(50);
+const sliderPosition = ref(20);
 const sliderBarActive = ref(false);
 const sliderThumbActive = ref(false);
 const sliderBarClasses = computed(() => ({ active: sliderBarActive.value, 'slider-bar': true }))
@@ -21,13 +21,13 @@ const afterImgStyles = computed(() => ({ clipPath: `polygon(0% 0%, ${sliderPosit
 const o0 = { opacity: 0 }
 const o1 = { opacity: 1 }
 
-watch(() => props.fullScreen, () => {
-    if (effects.value) container.value.animate([o0, o1], { duration: 500, iterations: 1 })
-    setTimeout(() => afterContainerWidth.value = beforeImg.value.getBoundingClientRect().width + 'px', 1)
-})
+// watch(() => props.fullScreen, () => {
+//     if (effects.value) container.value.animate([o0, o1], { duration: 500, iterations: 1 })
+//     setTimeout(() => afterContainerWidth.value = beforeImg.value.getBoundingClientRect().width + 'px', 1)
+// })
 
 onMounted(() => {
-    setTimeout(() => afterContainerWidth.value = beforeImg.value.getBoundingClientRect().width + 'px', 100)
+    // setTimeout(() => afterContainerWidth.value = beforeImg.value.getBoundingClientRect().width + 'px', 100)
 })
 </script>
 
@@ -36,9 +36,11 @@ onMounted(() => {
         <div class="blur" v-if="props.fullScreen" @click="emit('toggleFullScreen');"></div>
     </Transition>
     <div ref="container" :class="containerClasses">
-        <img ref="beforeImg" :class="imgClasses" :src="props.imgs.before" alt="Before Image">
+        <img v-if="!fullScreen" ref="beforeImg" :class="imgClasses" :src="props.imgs.before" alt="Before Image">
+        <img v-else="fullScreen" ref="beforeImg" :class="imgClasses" :src="props.fullImgs.before" alt="Before Image">
         <div ref="afterContainer" class="after-container" :style="{ width: afterContainerWidth }">
-            <img class="afterImg" :src="props.imgs.after" alt="After Image" :style="afterImgStyles">
+            <img v-if="!fullScreen" class="afterImg" :src="props.imgs.after" alt="After Image" :style="afterImgStyles">
+            <img v-else class="afterImg" :src="props.fullImgs.after" alt="After Image" :style="afterImgStyles">
             <div ref="sliderBar" :class="sliderBarClasses" :style="{ left: sliderPosition + '%' }"></div>
             <img src="/icons/slider-arrows.svg" :class="sliderThumbClasses" alt="Slider Arrows"
                 :style="{ left: sliderPosition + '%' }">

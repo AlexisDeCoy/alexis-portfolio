@@ -44,7 +44,7 @@ onMounted(() => { gradientComposable(stop0, stop1, stop2, stop3, stop4, stop5) }
                 :rx="orientation === 'portrait' ? '10' : '4'" />
         </svg>
         <div class="slider-container">
-            <ImageSlider :full-screen="fullScreen" :imgs="reno.imgs" @toggleFullScreen="toggleFullScreen" />
+            <ImageSlider :full-screen="fullScreen" :imgs="reno.imgs" :fullImgs="reno.fullImgs" @toggleFullScreen="toggleFullScreen" />
         </div>
         <div class="content-container">
             <h2 :class="colorActive ? 'var' : 'white'">Location: </h2>
@@ -80,7 +80,7 @@ h1.portrait {
     width: 100%;
     display: flex;
     margin-bottom: 15vh;
-    margin-top: 10vh;
+    margin-top: 3vh;
     align-items: center;
 }
 

@@ -7,7 +7,7 @@ const orientation = inject('orientation', { orientation: 'landscape' })
 
 const container = ref(null)
 const containerClasses = computed(() => ({ 'full-screen': props.fullScreen, effects: effects.value, 'container': true }))
-const markersClasses = computed(() => ({ 'full-screen': props.fullScreen, 'markers': true }))
+const markersClasses = computed(() => ({ 'full-screen': props.fullScreen, portrait: orientation.value === 'portrait', 'markers': true }))
 
 const currentImage = ref(null)
 const imageIndex = ref(0)
@@ -145,7 +145,7 @@ img {
   width: 100%;
   height: 10%;
   position: absolute;
-  top: 101%;
+  top: 105%;
   justify-content: center;
   align-items: center;
 }
@@ -165,7 +165,7 @@ img {
   border-radius: 50%;
   margin: 0 6px;
   width: max-content;
-  height: 50%;
+  height: 100%;
   min-width: 12px;
   min-height: 12px;
   max-width: 25px;

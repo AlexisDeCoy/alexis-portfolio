@@ -119,11 +119,9 @@ SCRIPT SETUP LAYOUT:
                 <path v-for="j in TechIcons[i - 1]['paths'].length" :d="TechIcons[i - 1]['paths'][j - 1]['path']"
                     :fill="TechIcons[i - 1]['paths'][j - 1]['fill']" fill-rule="evenodd" />
             </svg>
-            <a :href="TechIcons[i - 1]['link']">
                 <text :x="horizontalPosition(i) + 135" :y="verticalPosition(i) + 49" width="160" height="78"
-                    dominant-baseline="middle" text-anchor="middle" fill="#fff" :href="TechIcons[i - 1]['link']">{{
+                    dominant-baseline="middle" text-anchor="middle" fill="#fff">{{
         TechIcons[i - 1]['title'] }}</text>
-            </a>
         </g>
         <g v-for="i in remainingIconQuantity">
             <rect :x="horizontalPositionRemaining(i)" :y="verticalPositionRemaining()" width="210" height="98" rx="32"
@@ -138,11 +136,9 @@ SCRIPT SETUP LAYOUT:
                     :d="remainingIcons[i - 1]['paths'][j - 1]['path']"
                     :fill="remainingIcons[i - 1]['paths'][j - 1]['fill']" fill-rule="evenodd" />
             </svg>
-            <a :href="remainingIcons[i - 1]['link']">
-                <text :x="horizontalPositionRemaining(i) + 135" :y="verticalPositionRemaining() + 49" width="160"
-                    height="78" dominant-baseline="middle" text-anchor="middle" fill="#fff">{{
+            <text :x="horizontalPositionRemaining(i) + 135" :y="verticalPositionRemaining() + 49" width="160"
+                height="78" dominant-baseline="middle" text-anchor="middle" fill="#fff">{{
         remainingIcons[i - 1]['title'] }}</text>
-            </a>
         </g>
     </svg>
 </template>
@@ -174,14 +170,6 @@ END TEMPLATE
 <style scoped>
 svg {
     width: 100%;
-}
-
-g {
-    cursor: pointer;
-}
-
-g:hover text {
-    text-decoration: underline;
 }
 
 text {

@@ -10,6 +10,10 @@ const renoData = [
             'replacement fixtures in kitchen and bath, painting of the walls and ceiling, kitchen backsplash and shower tiling, custom MDF closet shelving, and cabinetry installation.',
         },
         imgs: {
+            before: '/renoImgs/bathroom/brBeforeSmS.jpg',
+            after: '/renoImgs/bathroom/brAfterSmS.jpg'
+        },
+        fullImgs: {
             before: '/renoImgs/bathroom/brBeforeSm.jpg',
             after: '/renoImgs/bathroom/brAfterSm.jpg'
         }
@@ -25,6 +29,10 @@ const renoData = [
             'assembly and placement of storage shelving and furniture, fixing outdoor furniture, tilling and fertilizing the garden beds, and repairing an outdoor fountain pump.',
         },
         imgs: {
+            before: '/renoImgs/backsplash/bsBeforeSmS.jpg',
+            after: '/renoImgs/backsplash/bsAfterSmS.jpg'
+        },
+        fullImgs: {
             before: '/renoImgs/backsplash/bsBeforeSm.jpg',
             after: '/renoImgs/backsplash/bsAfterSm.jpg'
         }

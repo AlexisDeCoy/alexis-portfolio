@@ -86,13 +86,13 @@ END TEMPLATE
 nav {
   background: var(--dark-grey-translucent);
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px 5px var(--tag-declare-color);
+  /* box-shadow: 0 0 10px 5px var(--tag-declare-color); */
   display: flex;
   justify-content: space-between;
   width: 100%;
   position: fixed;
   top: 0;
-  padding: 1vh 5% 0 5%;
+  padding: 1vh 5%;
   z-index: 2;
 }
 

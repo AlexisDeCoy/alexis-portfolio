@@ -59,7 +59,7 @@ const resumePosition = ref(1500)
 
 const animationActive = ref(false)
 const animationSpeed = ref(1)
-const blurActive = ref(false)
+const blurActive = ref(true)
 const blurSpread = ref(100)
 const colorActive = ref(true)
 const colorStrength = ref(1)
@@ -121,15 +121,16 @@ onMounted(() => {
   <Name @disablePreview="disablePreview" />
   <Technologies :key="componentKey" />
   <SectionBreak :key="componentKey" id="project" @setPosition="(top) => setPosition('project', top)" />
-  <h1 :class="sectTitleClass">Projects:</h1>
+  <h1 :class="sectTitleClass">Projects</h1>
   <template v-for="(project, index) in projectData">
-    <PartBreak :id="`project${index}`" />
+    <PartBreak :id="`project${index}`" v-if="index != 0"/>
     <ProjectPreview :project="project" :id="`project${index}`" />
   </template>
+  <div class="spacer"></div>
   <SectionBreak :key="componentKey" id="reno" @setPosition="(top) => setPosition('reno', top)" />
-  <h1 :class="sectTitleClass">Renovations:</h1>
+  <h1 :class="sectTitleClass">Renovations</h1>
   <template v-for="(reno, index) in renoData">
-    <PartBreak :id="`reno${index}`" />
+    <PartBreak :id="`reno${index}`" v-if="index != 0"/>
     <RenoPreview :reno="reno" :id="`reno${index}`" />
   </template>
   <SectionBreak :key="componentKey" id="resume" @setPosition="(top) => setPosition('resume', top)" />
@@ -143,7 +144,7 @@ onMounted(() => {
 .section.title {
   width: 90%;
   text-align: center;
-  margin: 5vh auto 0;
+  margin: 5vh auto;
   font-size: calc(8.5vw + 10px);
   line-height: 1;
 }

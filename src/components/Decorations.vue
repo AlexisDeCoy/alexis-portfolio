@@ -42,7 +42,7 @@ SCRIPT SETUP LAYOUT:
             <div v-if="!decorationsOpen"></div>
         </button>
         <div class="decorations">
-            <h1 class="style-tag">&#60<span class="tag-declare">style</span>&#62</h1>
+            <h1 class="style-tag">&#60<span class="component">Customize</span>&#62</h1>
             <div class="decorations">
                 <section>
                     <h1 :class="{disabled: !colorActive, 'style-selector': true}">.animation &#123;</h1>
@@ -119,7 +119,7 @@ SCRIPT SETUP LAYOUT:
                     <h1 class="style-selector close">&#125;</h1>
                 </section>
             </div>
-            <h1 class="style-tag">&#60/<span class="tag-declare">style</span>&#62</h1>
+            <h1 class="style-tag">&#60/<span class="component">Customize</span>&#62</h1>
         </div>
     </div>
 </template>
@@ -194,8 +194,9 @@ END TEMPLATE
 .decorations-container.portrait {
     width: 100%;
     top: 100%;
+    height: 50vh;
     transform: none;
-    border-radius: 20px 20px 0 0;
+    /* border-radius: 20px 20px 0 0; */
 }
 
 .decorations-container.preview {

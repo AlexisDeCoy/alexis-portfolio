@@ -9,14 +9,19 @@ const blurMax = computed(() => orientation.value === 'portrait' ? 12 : 16)
 
 const orientation = inject('orientation', { orientation: 'landscape' })
 const { id, project } = defineProps({ id: String, project: Object })
-const fullScreen = ref(false)
-const tagDeclareClass = computed(() => colorActive.value ? 'tag-declare' : 'white')
+const imgFullScreen = ref(false)
+const contentFullScreen = ref(false)
+
+// const tagDeclareClass = computed(() => colorActive.value ? 'tag-declare' : 'white')
+
+
 const varClass = computed(() => colorActive.value ? 'var' : 'white')
 const stringClass = computed(() => colorActive.value ? 'string' : 'white')
 const functionClass = computed(() => colorActive.value ? 'function' : 'white')
 const importControlClass = computed(() => colorActive.value ? 'import-control' : 'white')
 
-function toggleFullScreen() { fullScreen.value = !fullScreen.value; }
+function toggleImgFullScreen() { imgFullScreen.value = !imgFullScreen.value }
+function toggleContentFullScreen() { contentFullScreen.value = !contentFullScreen.value }
 
 onMounted(() => {
     gradientComposable(stop0, stop1, stop2, stop3, stop4, stop5)
@@ -51,7 +56,7 @@ SCRIPT SETUP LAYOUT:
     <h1 :class="{ portrait: orientation === 'portrait', 'title': true }">{{ project.title }}</h1>
     <div :class="{ portrait: orientation === 'portrait', 'project-container': true }">
         <svg :id="`${id}-svg`" xmlns="http://www.w3.org/2000/svg"
-            :viewBox="orientation === 'portrait' ? '0 0 500 500' : '0 0 1000 480'" preserveAspectRatio="none">
+            :viewBox="orientation === 'portrait' ? '0 0 480 324' : '0 0 900 360'" preserveAspectRatio="none">
             <defs>
                 <filter :id="`${id}-blur`" x="-1" y="-1" height="3" width="3">
                     <feGaussianBlur result="blur" :stdDeviation="blurMax * (blurSpread / 100)" />
@@ -66,37 +71,54 @@ SCRIPT SETUP LAYOUT:
                     <stop ref='stop5' offset="1.0" :stop-opacity="colorStrength" stop-color="#5D04D9" />
                 </linearGradient>
             </defs>
-            <rect :x="orientation === 'portrait' ? '25' : '50'" :y="orientation === 'portrait' ? '25' : '40'"
-                :height="orientation === 'portrait' ? '450' : '400'" :width="orientation === 'portrait' ? '450' : '400'"
+            <rect :x="orientation === 'portrait' ? '24' : '45'" :y="orientation === 'portrait' ? '24' : '69'"
+                :height="orientation === 'portrait' ? '246' : '222'" :width="orientation === 'portrait' ? '432' : '387'"
                 :fill="colorActive ? `url(#${id}-gradient)` : '#fff'" :filter="blurActive ? `url(#${id}-blur)` : 'none'"
                 :rx="orientation === 'portrait' ? '10' : '4'" />
         </svg>
         <div class="modal-container">
-            <ImageModal :fullScreen="fullScreen" :imgs="project.imgs" @toggleFullScreen="toggleFullScreen" />
+            <ImageModal :fullScreen="imgFullScreen" :imgs="project.imgs" @toggleFullScreen="toggleImgFullScreen" />
         </div>
-        <div class="content-container">
-            <h2><span :class="tagDeclareClass">const </span><span :class="varClass">description </span>=<span
-                    :class="stringClass">
-                    "</span></h2>
-            <h4 :class="stringClass">{{ project.details.description }}</h4>
-            <h2><span :class="stringClass">"</span></h2>
-            <h2><span :class="tagDeclareClass">let </span><span :class="varClass">goals </span>=<span
-                    :class="stringClass"> "</span></h2>
-            <h4 :class="stringClass">{{ project.details.goals }}</h4>
-            <h2><span :class="stringClass">"</span></h2>
-            <h2><span :class="tagDeclareClass">async function </span><span :class="functionClass">development() {</span>
-            </h2>
-            <h4 :class="stringClass">{{ project.details.development }}</h4>
-            <h2><span :class="functionClass">}</span></h2>
-            <h2>
-                <span :class="importControlClass">await </span>
-                <span :class="functionClass">nextSteps(</span>
-                <span :class="importControlClass">()</span><span :class="tagDeclareClass"> => </span>
-                <span :class="importControlClass">{</span>
-            </h2>
-            <h4 :class="stringClass">{{ project.details.nextSteps }}</h4>
-            <h2><span :class="importControlClass">}</span><span :class="functionClass">)</span></h2>
+        <Transition :name="contentFullScreen ? 'active' : ''">
+            <div class="blur" v-if="contentFullScreen" @click="toggleContentFullScreen"></div>
+        </Transition>
+        <div :class="{ 'full-screen': contentFullScreen, 'content-container': true }" @click="(() => !contentFullScreen ? toggleContentFullScreen() : {})">
+            <template v-if="!contentFullScreen">
+                <h4 :class="stringClass">{{ project.details.description }}</h4>
+            </template>
+            <template v-if="contentFullScreen">
+                <h2>
+                    <!-- <span :class="tagDeclareClass">const </span> -->
+                    <span :class="varClass">description </span>=<span :class="stringClass"> "</span>
+                </h2>
+                <h4 :class="stringClass">{{ project.details.description }}</h4>
+                <h2><span :class="stringClass">"</span></h2>
+                <h2>
+                    <!-- <span :class="tagDeclareClass">let </span> -->
+                    <span :class="varClass">goals </span>=<span :class="stringClass"> "</span>
+                </h2>
+                <h4 :class="stringClass">{{ project.details.goals }}</h4>
+                <h2><span :class="stringClass">"</span></h2>
+                <h2>
+                    <!-- <span :class="tagDeclareClass">async function </span> -->
+                    <!-- <span :class="functionClass">development</span> -->
+                    <span :class="functionClass">development </span>=<span :class="stringClass"> "</span>
+                </h2>
+                <h4 :class="stringClass">{{ project.details.development }}</h4>
+                <!-- <h2><span :class="functionClass">}</span></h2> -->
+                <h2><span :class="stringClass">"</span></h2>
+                <h2>
+                    <!-- <span :class="importControlClass">await </span> -->
+                    <span :class="importControlClass">nextSteps </span>=<span :class="stringClass"> "</span>
+                    <!-- <span :class="importControlClass"></span><span :class="tagDeclareClass"> => </span> -->
+                    <!-- <span :class="importControlClass">{</span> -->
+                </h2>
+                <h4 :class="stringClass">{{ project.details.nextSteps }}</h4>
+                <!-- <h2><span :class="importControlClass">}</span><span :class="functionClass">)</span></h2> -->
+                <h2><span :class="stringClass">"</span></h2>
+            </template>
         </div>
+        <img class="close" v-if="contentFullScreen" src="/icons/cross.svg" @click="toggleContentFullScreen">
     </div>
 </template>
 
@@ -144,7 +166,20 @@ END TEMPLATE
 -->
 
 <style scoped>
+.blur {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000000CA;
+    z-index: 3;
+}
+
 h1 {
+    /* position: absolute;
+    top: 0;
+    left: 5%; */
     width: 90%;
     margin: 0 auto 0;
     font-size: calc(6.5vw + 10px);
@@ -158,21 +193,22 @@ h1.portrait {
 }
 
 .project-container {
-    aspect-ratio: 5 / 2;
+    aspect-ratio: 3 / 1;
     position: relative;
     width: 100%;
     display: flex;
-    margin-bottom: 15vh;
-    margin-top: 10vh;
+    /* margin-bottom: 15vh;
+    margin-top: 10vh; */
     align-items: center;
 }
 
 .project-container.portrait {
     padding: 5%;
-    aspect-ratio: 1;
     flex-direction: column;
     margin-top: 0;
     margin-bottom: 5vh;
+    aspect-ratio: 2 / 1;
+    justify-content: space-between;
 }
 
 svg {
@@ -193,9 +229,9 @@ svg {
     justify-content: center;
     align-items: center;
     margin-left: 5.5%;
-    margin-right: 5.5%;
-    width: 39%;
-    aspect-ratio: 1;
+    margin-right: 2.5%;
+    width: 42%;
+    aspect-ratio: 16 / 9;
     box-sizing: border-box;
     border-radius: 5px;
     background: var(--dark-grey-translucent);
@@ -205,17 +241,16 @@ svg {
 .portrait .modal-container {
     width: 98%;
     margin: 1%;
-    aspect-ratio: 1;
 }
 
 .content-container {
     width: 45%;
     scrollbar-gutter: stable;
     margin-right: 5%;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    /* border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff; */
     scrollbar-color: #fff transparent;
-    height: 100%;
+    max-height: 100%;
     overflow: auto;
 }
 
@@ -227,6 +262,22 @@ svg {
     max-height: 90%;
 }
 
+.content-container.full-screen {
+    width: max-content;
+    background-color: var(--dark-grey-translucent);
+    max-width: 80%;
+    margin: 0;
+    max-height: 70%;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 5px #fff;
+    border-radius: 5px;
+    z-index: 3;
+}
+
 h2 {
     font-size: calc(1.5vw + 10px);
     margin: 0.5vw 4px;
@@ -236,6 +287,17 @@ h2 {
 h4 {
     margin: 0 16px;
     font-size: calc(1.2vw + 8px);
+}
+
+.close {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    transform: translate(-150%, 50%);
+    cursor: pointer;
+    z-index: 3;
 }
 </style>
 

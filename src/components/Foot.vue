@@ -85,6 +85,7 @@ h1 {
 h2 {
     font-size: calc(2vw + 5px);
     color: #fff;
+    line-height: 1.2;
 }
 
 .contact {
