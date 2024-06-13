@@ -100,14 +100,14 @@ provide('decorations', decorations);
 provide('preview', preview);
 
 watchEffect(() => {
-  if (effects.value === true) document.documentElement.style.scrollBehavior = "smooth"
+  if (effects.value === true && !preview.value === true ) document.documentElement.style.scrollBehavior = "smooth"
   else document.documentElement.style.scrollBehavior = "auto"
 })
 
 onMounted(() => {
   document.body.classList.add('prevent-scroll')
   document.documentElement.style.scrollBehavior = "auto"
-  setTimeout(() => { window.scrollTo(0, 0) }, 150)
+  setTimeout(() => { window.scrollTo(0, 0) }, 300)
 })
 </script>
 
