@@ -106,6 +106,7 @@ watchEffect(() => {
 
 onMounted(() => {
   document.body.classList.add('prevent-scroll')
+  document.documentElement.style.scrollBehavior = "auto"
   setTimeout(() => { window.scrollTo(0, 0) }, 150)
 })
 </script>
