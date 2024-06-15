@@ -152,7 +152,6 @@ onMounted(() => {
 }
 
 .section.title.portrait {
-  text-align: left;
   font-size: calc(13.5vw + 10px);
 }
 

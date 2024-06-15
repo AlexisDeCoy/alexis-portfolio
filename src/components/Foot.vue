@@ -23,8 +23,8 @@ SCRIPT SETUP LAYOUT:
             </div>
             <div class="contact">
                 <div class="logo"></div>
-                <a href="www.linkedin.com/in/alexis-decicco">Alexis DeCicco</a>
-                <a class="img-link" href="www.linkedin.com/in/alexis-decicco"><img src="/icons/link-arrow.svg" alt="Link Arrow"></a>
+                <a href="https://linkedin.com/in/alexis-decicco">Alexis DeCicco</a>
+                <a class="img-link" href="https://linkedin.com/in/alexis-decicco"><img src="/icons/link-arrow.svg" alt="Link Arrow"></a>
             </div>
             <div class="contact">
                 <img src="/icons/email.svg" alt="Email Icon">
