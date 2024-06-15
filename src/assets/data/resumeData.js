@@ -13,8 +13,8 @@ const resumeData = {
         {
             title: 'The House',
             role: 'Full Stack Developer',
-            gitHub: 'gHLink',
-            link: 'projectLink',
+            gitHub: 'https://github.com/AlexisDeCoy/theHouse/',
+            link: 'n/a',
             description: 'Short, text-based narrative game with puzzle elements using Python3, Flask, and bcrypt',
             bullets: [
                 "Created an SQL database using bcrypt with multiple many-to-many relationships to manage users, track completion for both puzzles and items, and secure passwords using a hash.",
@@ -26,8 +26,8 @@ const resumeData = {
         {
             title: 'Karplus Portfolio Website',
             role: 'Front-End Developer',
-            gitHub: 'gHLink',
-            link: 'projectLink',
+            gitHub: 'https://github.com/AlexisDeCoy/bug-portfolio/',
+            link: 'https://bugkarplus.com/',
             description: 'React website to showcase art and provide contact information for the client',
             bullets: [
                 "Wrote multiple React components using flex and grid to display information and images for over 20 works across multiple media.",
@@ -39,9 +39,9 @@ const resumeData = {
         {
             title: 'Set',
             role: 'Front-End Developer',
-            gitHub: 'gHLink',
-            link: 'projectLink',
-            description: 'Game based on The Set® Card Game, featuring many customization options, written in React',
+            gitHub: 'https://github.com/AlexisDeCoy/set/',
+            link: 'https://stellular-conkies-38bd43.netlify.app/',
+            description: 'Desktop game based on The Set® Card Game, featuring many customization options, written in React',
             bullets: [
                 "Designed 18 SVG shapes and 9 SVG patterns that can be changed using path strings and JSX which are implemented in an SVG component with a consistent viewbox.",
                 "Managed over 20 useState variables and props to preserve game progress and user customization options, including those for a miniature game embedded in the instructions.",
@@ -52,9 +52,9 @@ const resumeData = {
         {
             title: 'Mastermind',
             role: 'Front-End Developer',
-            gitHub: 'gHLink',
-            link: 'projectLink',
-            description: 'Two-day Vue project based on Mastermind, where players must determine the randomly generated secret code',
+            gitHub: 'https://github.com/AlexisDeCoy/mastermind/',
+            link: 'https://gregarious-cheesecake-3a9f7d.netlify.app/',
+            description: 'Two-day Vue project based on the Mastermind game, where players must determine the randomly generated secret code',
             bullets: [
                 "Styled the game board using computed Vue objects to preserve the circular appearance of each slot upon any changes to the user options.",
                 "Created multiple v-model input options where users can change peg color, the number of guesses and color options, and length of the code, to increase or decrease difficulty.",
@@ -65,13 +65,13 @@ const resumeData = {
         {
             title: 'Personal Portfolio Website',
             role: 'Front-End Developer',
-            gitHub: 'gHLink',
-            link: 'projectLink',
+            gitHub: 'https://github.com/AlexisDeCoy/alexis-portfolio/',
+            link: 'n/a',
             description: 'Vue website to compile my resume, contact information, and development projects, styled based on neon signs and the Dark+ theme for VS Code',
             bullets: [
-                "Designed seven website display options assigned to Vue refs to engage the user, which can be adjusted through v-model in an sliding component styled to look like CSS.",
+                "Designed 7 website display options assigned to Vue refs to engage the user, which can be adjusted through v-model in an sliding component styled to look like CSS.",
                 "Applied two async functions following an onMount hook to display an intro animation, all of which can be disabled through user input with an AbortController and breakpoints within each function.",
-                "Developed six components with SVG gradient fills that can be animated with user specified speed and direction using a composable that takes template refs as arguments and cycles through colors for each gradient stop.",
+                "Developed 6 components with SVG gradient fills that can be animated with user specified speed and direction using a composable that takes template refs as arguments and cycles through colors for each gradient stop.",
                 "Created an adjustable blur spread for all SVG elements that changes relative to an appropriate maximum standard deviation for each component, which can also be disabled entirely.",
                 "Linked navigation buttons to corresponding section breaks relative to the y value of the window object, which updates upon changes to the display's orientation and changes appearance based on scroll position."
             ]
@@ -113,8 +113,8 @@ const resumeData = {
             yearEnded: 0,
             bullets: [
                 'Supervised framing, drywall, flooring, tiling, and more to cost effectively complete the renovation in a timely fashion.',
-                'Installed over XXX square feet of underlayment and LVT flooring, maintaining orientation throughout 5 different rooms to create a consistent decorative theme.',
-                'Waterproofed, cut, and installed XXX square feet of porcelain tile for a bathroom shower to meet all code specifications and requests of the customer.',
+                'Installed over 500 square feet of underlayment and LVT flooring, maintaining orientation throughout 5 different rooms to create a consistent decorative theme.',
+                'Waterproofed, cut, and installed porcelain tile for a bathroom shower to meet all code specifications and requests of the customer.',
                 'Designed and constructed two custom closets to maximize available space and increase usability for the storage of clothing and other items.'
             ]
         },

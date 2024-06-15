@@ -1,6 +1,7 @@
 const projectData = [
     {
         title: 'The House',
+        link: 'n/a',
         details:
         {
             description: 'The House is my first development project, a text-based, interactive fiction horror game inspired by Anchorhead, where players are tasked to explore and uncover the mysteries of their new home. ' +
@@ -33,6 +34,7 @@ const projectData = [
     },
     {
         title: 'Karplus Portfolio',
+        link: 'https://bugkarplus.com/',
         details:
         {
             description: 'This React portfolio was my first project for a client. Working together through multiple design revisions was a new experience, and increased my ability to make changes on the fly. ' +
@@ -66,9 +68,10 @@ const projectData = [
     },
     {
         title: 'Set',
+        link: 'https://stellular-conkies-38bd43.netlify.app/',
         details:
         {
-            description: 'Set is a React game is based on The Set® Card Game, which I love to play with friends and family whenever I get the opportunity. The reason for choosing this project was two-fold, it\'s something I\'m personally pasisonate about, ' +
+            description: 'Set is a desktop only React game is based on The Set® Card Game, which I love to play with friends and family whenever I get the opportunity. The reason for choosing this project was two-fold, it\'s something I\'m personally pasisonate about, ' +
             'and also an excellent way to gain experience managing variables and the algorithms that go with them. It is worth noting that this project is strictly that; I have no intentions on making money from this game, or am in any way trying to ' +
             'take credit for the idea. If you like my project, please consider checking out The Set® Card Game, owned by Set Enterprises, Inc., a part of PlayMonster LLC.',
             goals: 'My goal for this project was to make the cards customizable, which proved much more difficult than I was expecting. Players can change the card\'s shape, pattern, and color during the game without losing progress. ' + 
@@ -99,6 +102,7 @@ const projectData = [
     },
     {
         title: 'Mastermind',
+        link: 'https://gregarious-cheesecake-3a9f7d.netlify.app/',
         details:
         {
             description: 'Mastermind is a Vue game based on Mastermind, which came about because I tried it with my partner and got absolutely trounced. As you can tell, I really like to play and make games. ' +

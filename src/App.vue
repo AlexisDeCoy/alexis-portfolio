@@ -119,6 +119,8 @@ onMounted(() => {
     v-model:colorStrength='colorStrength' v-model:effects='effects' />
   <div class="spacer"></div>
   <Name @disablePreview="disablePreview" />
+  <SectionBreak id="skills" />
+  <h1 :class="sectTitleClass">Skills</h1>
   <Technologies :key="componentKey" />
   <SectionBreak :key="componentKey" id="project" @setPosition="(top) => setPosition('project', top)" />
   <h1 :class="sectTitleClass">Projects</h1>
@@ -126,7 +128,7 @@ onMounted(() => {
     <PartBreak :id="`project${index}`" v-if="index != 0"/>
     <ProjectPreview :project="project" :id="`project${index}`" />
   </template>
-  <div class="spacer"></div>
+  <div class="spacer" v-if="orientation !== 'portrait'"></div>
   <SectionBreak :key="componentKey" id="reno" @setPosition="(top) => setPosition('reno', top)" />
   <h1 :class="sectTitleClass">Renovations</h1>
   <template v-for="(reno, index) in renoData">

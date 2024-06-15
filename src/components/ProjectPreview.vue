@@ -82,9 +82,10 @@ SCRIPT SETUP LAYOUT:
         <Transition :name="contentFullScreen ? 'active' : ''">
             <div class="blur" v-if="contentFullScreen" @click="toggleContentFullScreen"></div>
         </Transition>
-        <div :class="{ 'full-screen': contentFullScreen, 'content-container': true }" @click="(() => !contentFullScreen ? toggleContentFullScreen() : {})">
+        <div :class="{ 'full-screen': contentFullScreen, 'content-container': true }">
             <template v-if="!contentFullScreen">
                 <h4 :class="stringClass">{{ project.details.description }}</h4>
+
             </template>
             <template v-if="contentFullScreen">
                 <h2>
@@ -119,6 +120,11 @@ SCRIPT SETUP LAYOUT:
             </template>
         </div>
         <img class="close" v-if="contentFullScreen" src="/icons/cross.svg" @click="toggleContentFullScreen">
+    </div>
+    <div class="details">
+        <h2 v-if="project.link !== 'n/a'" class="link"><a :href="project.link" target="_blank"
+                rel="noopener noreferrer">Link</a></h2>
+        <h2 class="link" @click="toggleContentFullScreen">Read more...</h2>
     </div>
 </template>
 
@@ -182,7 +188,7 @@ h1 {
     left: 5%; */
     width: 90%;
     margin: 0 auto 0;
-    font-size: calc(6.5vw + 10px);
+    font-size: calc(5.5vw + 10px);
     color: #fff;
     line-height: 1;
 }
@@ -190,6 +196,12 @@ h1 {
 h1.portrait {
     font-size: calc(9.5vw + 10px);
     text-align: center;
+}
+
+.link {
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--component-color);
 }
 
 .project-container {
@@ -247,8 +259,6 @@ svg {
     width: 45%;
     scrollbar-gutter: stable;
     margin-right: 5%;
-    /* border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff; */
     scrollbar-color: #fff transparent;
     max-height: 100%;
     overflow: auto;
@@ -298,6 +308,12 @@ h4 {
     transform: translate(-150%, 50%);
     cursor: pointer;
     z-index: 3;
+}
+
+.details {
+    display: flex;
+    margin: 0 5%;
+    justify-content: space-around;
 }
 </style>
 

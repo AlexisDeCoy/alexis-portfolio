@@ -64,7 +64,7 @@ onMounted(() => { gradientComposable(stop0, stop1, stop2, stop3, stop4, stop5) }
 h1 {
     width: 90%;
     margin: 0 auto 0;
-    font-size: calc(6.5vw + 10px);
+    font-size: calc(5.5vw + 10px);
     color: #fff;
     line-height: 1;
 }

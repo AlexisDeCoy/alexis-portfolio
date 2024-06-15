@@ -1,5 +1,6 @@
 <script setup>
 import resumeData from '@/assets/data/resumeData';
+import PDF from '../assets/data/Alexis.DeCicco.Resume.June.2024.v1.pdf';
 const { skills, projects, experience, education } = resumeData;
 
 //ADD year for projects?
@@ -23,8 +24,9 @@ SCRIPT SETUP LAYOUT:
 <template>
     <section class="head">
         <h1>ALEXIS DECICCO</h1>
-        <h3 class="contact"><a href="github.com/AlexisDeCoy">GitHub</a> | <a
-                href="linkedin.com/in/alexis-decicco">LinkedIn</a> | <a href="">PDF</a></h3>
+        <h3 class="contact"><a href="https://github.com/AlexisDeCoy" target='_blank' rel='noopener noreferrer'>GitHub</a> | <a
+                href="https://linkedin.com/in/alexis-decicco" target='_blank' rel='noopener noreferrer'>LinkedIn</a> | <a
+                :href="PDF" target='_blank' rel='noopener noreferrer'>PDF</a></h3>
         <h3 class="contact">(970) 567-9241 | alexiscdecicco@gmail.com</h3>
         <h3 class="contact">Fort Collins, CO</h3>
     </section>
@@ -75,7 +77,8 @@ SCRIPT SETUP LAYOUT:
                 <h5>-</h5>
                 <h5>{{ bullet }}</h5>
             </div>
-            <h4 class="contact"><a :href="project.gitHub">GitHub</a> | <a :href="project.link">URL</a></h4>
+            <h4 class="contact"><a :href="project.gitHub" target='_blank' rel='noopener noreferrer'>GitHub</a><span v-if="project.link !== 'n/a'"> | <a
+                        :href="project.link" target='_blank' rel='noopener noreferrer'>URL</a></span></h4>
         </div>
     </section>
     <section class="experience">
@@ -106,7 +109,7 @@ SCRIPT SETUP LAYOUT:
         </div>
     </section>
     <section class="foot">
-        <h3 class="contact"><a href="">PDF</a></h3>
+        <h3 class="contact"><a :href="PDF" target='_blank' rel='noopener noreferrer'>PDF</a></h3>
     </section>
 </template>
 
