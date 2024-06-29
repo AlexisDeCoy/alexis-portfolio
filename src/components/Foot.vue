@@ -18,12 +18,12 @@ SCRIPT SETUP LAYOUT:
         <div>
             <div class="contact">
                 <img src="/icons/github.svg" alt="GitHub Icon">
-                <a href="https://github.com/AlexisDeCoy">@alexisdecoy</a>
+                <a href="https://github.com/AlexisDeCoy" target='_blank' rel='noopener noreferrer'>@alexisdecoy</a>
                 <a class="img-link" href="https://github.com/AlexisDeCoy"><img src="/icons/link-arrow.svg" alt="Link Arrow"></a>
             </div>
             <div class="contact">
                 <div class="logo"></div>
-                <a href="https://linkedin.com/in/alexis-decicco">Alexis DeCicco</a>
+                <a href="https://linkedin.com/in/alexis-decicco" target='_blank' rel='noopener noreferrer'>Alexis DeCicco</a>
                 <a class="img-link" href="https://linkedin.com/in/alexis-decicco"><img src="/icons/link-arrow.svg" alt="Link Arrow"></a>
             </div>
             <div class="contact">

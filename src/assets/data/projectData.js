@@ -1,68 +1,33 @@
 const projectData = [
     {
-        title: 'The House',
-        link: 'n/a',
+        title: 'Mastermind',
+        link: 'https://gregarious-cheesecake-3a9f7d.netlify.app/',
         details:
         {
-            description: 'The House is my first development project, a text-based, interactive fiction horror game inspired by Anchorhead, where players are tasked to explore and uncover the mysteries of their new home. ' +
-            'This game features puzzles, grotesque locations, witchcraft, and a variety of items to collect, each of which was lovingly drawn by Bug Karplus.',
-            goals: 'With The House, I wanted to make something relatively easy to style that still took advantage of the things I had learned. I included page routing, state variables, login and registration, a database, and a whole lot of HTML. ' +
-            'As is, this project only took a week, and for that, I am very proud of it.',
-            development: 'I used Python with Flask to manage the front-end and routing. Every page is its own HTML file, each containing embedded links that direct to other pages. Data tracking is tied to a given user account, where items and certain task completion are stored in an SQL database. ' +
-            'User passwords are securely stored using a hash. Styling was intentionally minimal, designed to feel creepy and old, like the house itself. Images were stored locally as part of the project. File structure was crucial for this project, since there are 48 different HTML files.',
-            nextSteps: 'When I get the chance to go back to this project, there are so many things I want to try out. I had a great time with the writing, so I want to add more to the story. I want to make more puzzles too, either with existing items or with new ones. ' +
-            'There\'s also a bunch of ideas I have using animations to make things creepier. The one I\'m most excited about is adding a glow around the cursor when the player is in the basement with the lighter. Adding sound effects would also be a lot of fun.'
+            description: 'Mastermind is a Vue game based on Mastermind, which came about because I tried it with my partner and got absolutely trounced. As you can tell, I really like to play and make games. ' +
+            'I designed it as a way to practice, and inadvertently spent numerous hours playing since I finished making it. As with Set, I do not intend for this game to make money or replace the official version.',
+            goals: 'The goal of this project was to give me a way to practice the game, since I started off so miserably at it. I also wanted it to have a short design time, since by this point I had already started working on this site. ' +
+            'It ended up taking about two days. I also wanted to add customizable difficulty options (because why not?) and I\'ve still yet to solve any of the most challenging codes.',
+            development: 'I styled the board so that the pegs maintained aspect-ratio upon any changes to the board\'s appearance. I wrote an algorithm that randomly generates a code based on the user preferences, so the game can be played entirely solo. ' +
+            'I used CSS radial gradients to shade the pegs, using template literals to apply them through inline styling. All data was tracked using refs and computed variables, which are both a part of Vue.',
+            nextSteps: 'Since this was a fast project with small goals, there aren\'t many things that I want to change. If anything, I would like to make the game more mobile friendly and further style to make it more exciting to look at.'
         },
         imgs: [
             {
-                img: '/projectImgs/theHouse/textSm.png',
-                alt: 'Gameplay'
+                img: '/projectImgs/mastermind/difficultSm.png',
+                alt: 'Difficult Board'
             },
             {
-                img: '/projectImgs/theHouse/inventorySm.png',
-                alt: 'Inventory Item'
+                img: '/projectImgs/mastermind/easySm.png',
+                alt: 'Easy Board'
             },
             {
-                img: '/projectImgs/theHouse/loginSm.png',
-                alt: 'Log In'
+                img: '/projectImgs/mastermind/winSm.png',
+                alt: 'Win!'
             },
             {
-                img: '/projectImgs/theHouse/puzzleSm.png',
-                alt: 'Puzzle'
-            }
-        ]
-    },
-    {
-        title: 'Karplus Portfolio',
-        link: 'https://bugkarplus.com/',
-        details:
-        {
-            description: 'This React portfolio was my first project for a client. Working together through multiple design revisions was a new experience, and increased my ability to make changes on the fly. ' +
-            'I\'m glad that this was my first professional experience, since the expectations were reasonable and timeline flexible for me, since I\'m still learning new things.',
-            goals: 'The goal was to create a minimal website that showcased the artwork and provide contact info for anyone looking to reach out or learn more about the artist.' +
-            'I worked together with the artist through a series of revisions, and I continue to actively update the site.',
-            development: 'This was my first formal React project, and I\'ve really come to like JavaScript. I used CSS grid and flex to present images according to the number of photos, ' +
-            'React Router for client side navigation across the different pages, and designed components that can adjust to any changes in data, be it additional works or additions to the CV.',
-            nextSteps: 'With the next update, I want to add a way for the client to be able to add information to the site directly, without my involvement. Doing so is an absolute necessity for other customers going forward. ' +
-            'There are a few ease of use changes I want to add as well, especially a way to switch between works without having to return to the selection page. Finally, I want to integrate a shop page, so people interested in purchasing ' +
-            'the art can do so without going to a different site.'
-        },
-        imgs: [
-            {
-                img: '/projectImgs/bPortfolio/homeSm.png',
-                alt: 'Home Page'
-            },
-            {
-                img: '/projectImgs/bPortfolio/printsSm.png',
-                alt: 'Prints'
-            },
-            {
-                img: '/projectImgs/bPortfolio/detailsSm.png',
-                alt: 'Details'
-            },
-            {
-                img: '/projectImgs/bPortfolio/contactSm.png',
-                alt: 'Contact Info'
+                img: '/projectImgs/mastermind/lossSm.png',
+                alt: 'Loss'
             }
         ]
     },
@@ -101,37 +66,72 @@ const projectData = [
         ]
     },
     {
-        title: 'Mastermind',
-        link: 'https://gregarious-cheesecake-3a9f7d.netlify.app/',
+        title: 'Karplus Portfolio',
+        link: 'https://bugkarplus.com/',
         details:
         {
-            description: 'Mastermind is a Vue game based on Mastermind, which came about because I tried it with my partner and got absolutely trounced. As you can tell, I really like to play and make games. ' +
-            'I designed it as a way to practice, and inadvertently spent numerous hours playing since I finished making it. As with Set, I do not intend for this game to make money or replace the official version.',
-            goals: 'The goal of this project was to give me a way to practice the game, since I started off so miserably at it. I also wanted it to have a short design time, since by this point I had already started working on this site. ' +
-            'It ended up taking about two days. I also wanted to add customizable difficulty options (because why not?) and I\'ve still yet to solve any of the most challenging codes.',
-            development: 'I styled the board so that the pegs maintained aspect-ratio upon any changes to the board\'s appearance. I wrote an algorithm that randomly generates a code based on the user preferences, so the game can be played entirely solo. ' +
-            'I used CSS radial gradients to shade the pegs, using template literals to apply them through inline styling. All data was tracked using refs and computed variables, which are both a part of Vue.',
-            nextSteps: 'Since this was a fast project with small goals, there aren\'t many things that I want to change. If anything, I would like to make the game more mobile friendly and further style to make it more exciting to look at.'
+            description: 'This React portfolio was my first project for a client. Working together through multiple design revisions was a new experience, and increased my ability to make changes on the fly. ' +
+            'I\'m glad that this was my first professional experience, since the expectations were reasonable and timeline flexible for me, since I\'m still learning new things.',
+            goals: 'The goal was to create a minimal website that showcased the artwork and provide contact info for anyone looking to reach out or learn more about the artist.' +
+            'I worked together with the artist through a series of revisions, and I continue to actively update the site.',
+            development: 'This was my first formal React project, and I\'ve really come to like JavaScript. I used CSS grid and flex to present images according to the number of photos, ' +
+            'React Router for client side navigation across the different pages, and designed components that can adjust to any changes in data, be it additional works or additions to the CV.',
+            nextSteps: 'With the next update, I want to add a way for the client to be able to add information to the site directly, without my involvement. Doing so is an absolute necessity for other customers going forward. ' +
+            'There are a few ease of use changes I want to add as well, especially a way to switch between works without having to return to the selection page. Finally, I want to integrate a shop page, so people interested in purchasing ' +
+            'the art can do so without going to a different site.'
         },
         imgs: [
             {
-                img: '/projectImgs/mastermind/difficultSm.png',
-                alt: 'Difficult Board'
+                img: '/projectImgs/bPortfolio/homeSm.png',
+                alt: 'Home Page'
             },
             {
-                img: '/projectImgs/mastermind/easySm.png',
-                alt: 'Easy Board'
+                img: '/projectImgs/bPortfolio/printsSm.png',
+                alt: 'Prints'
             },
             {
-                img: '/projectImgs/mastermind/winSm.png',
-                alt: 'Win!'
+                img: '/projectImgs/bPortfolio/detailsSm.png',
+                alt: 'Details'
             },
             {
-                img: '/projectImgs/mastermind/lossSm.png',
-                alt: 'Loss'
+                img: '/projectImgs/bPortfolio/contactSm.png',
+                alt: 'Contact Info'
             }
         ]
     },
+    {
+        title: 'The House',
+        link: 'n/a',
+        details:
+        {
+            description: 'The House is my first development project, a text-based, interactive fiction horror game inspired by Anchorhead, where players are tasked to explore and uncover the mysteries of their new home. ' +
+            'This game features puzzles, grotesque locations, witchcraft, and a variety of items to collect, each of which was lovingly drawn by Bug Karplus.',
+            goals: 'With The House, I wanted to make something relatively easy to style that still took advantage of the things I had learned. I included page routing, state variables, login and registration, a database, and a whole lot of HTML. ' +
+            'As is, this project only took a week, and for that, I am very proud of it.',
+            development: 'I used Python with Flask to manage the front-end and routing. Every page is its own HTML file, each containing embedded links that direct to other pages. Data tracking is tied to a given user account, where items and certain task completion are stored in an SQL database. ' +
+            'User passwords are securely stored using a hash. Styling was intentionally minimal, designed to feel creepy and old, like the house itself. Images were stored locally as part of the project. File structure was crucial for this project, since there are 48 different HTML files.',
+            nextSteps: 'When I get the chance to go back to this project, there are so many things I want to try out. I had a great time with the writing, so I want to add more to the story. I want to make more puzzles too, either with existing items or with new ones. ' +
+            'There\'s also a bunch of ideas I have using animations to make things creepier. The one I\'m most excited about is adding a glow around the cursor when the player is in the basement with the lighter. Adding sound effects would also be a lot of fun.'
+        },
+        imgs: [
+            {
+                img: '/projectImgs/theHouse/textSm.png',
+                alt: 'Gameplay'
+            },
+            {
+                img: '/projectImgs/theHouse/inventorySm.png',
+                alt: 'Inventory Item'
+            },
+            {
+                img: '/projectImgs/theHouse/loginSm.png',
+                alt: 'Log In'
+            },
+            {
+                img: '/projectImgs/theHouse/puzzleSm.png',
+                alt: 'Puzzle'
+            }
+        ]
+    }
     // {
     //     title: 'Personal Portfolio',
     //     details:

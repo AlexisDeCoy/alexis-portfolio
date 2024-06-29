@@ -1,6 +1,6 @@
 <script setup>
 import resumeData from '@/assets/data/resumeData';
-import PDF from '../assets/data/Alexis.DeCicco.Resume.June.2024.v1.pdf';
+import PDF from '../assets/data/Resume.pdf';
 const { skills, projects, experience, education } = resumeData;
 
 //ADD year for projects?
@@ -61,6 +61,14 @@ SCRIPT SETUP LAYOUT:
             <h4>
                 <template v-for="(tool, i) in skills.tools">
                     <span>{{ tool }}{{ i < skills.tools.length - 1 ? ', ' : '' }}</span>
+                </template>
+            </h4>
+        </div>
+        <div class="part">
+            <h3>Other:</h3>
+            <h4>
+                <template v-for="(otherItem, i) in skills.other">
+                    <span>{{ otherItem }}{{ i < skills.other.length - 1 ? ', ' : '' }}</span>
                 </template>
             </h4>
         </div>
