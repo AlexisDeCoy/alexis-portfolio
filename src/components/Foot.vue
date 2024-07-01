@@ -12,24 +12,21 @@ SCRIPT SETUP LAYOUT:
 <template>
     <div :class="{ portrait: orientation === 'portrait', container: true }">
         <div>
-            <h1>Need help making your project ideas &#10; come to life?</h1>
-            <h2>Send me an email or find me on GitHub and LinkedIn</h2>
+            <h1>Have a cool project idea?</h1>
+            <h2>Contact me and let's make it a reality together!</h2>
         </div>
         <div>
             <div class="contact">
                 <img src="/icons/github.svg" alt="GitHub Icon">
                 <a href="https://github.com/AlexisDeCoy" target='_blank' rel='noopener noreferrer'>@alexisdecoy</a>
-                <a class="img-link" href="https://github.com/AlexisDeCoy"><img src="/icons/link-arrow.svg" alt="Link Arrow"></a>
             </div>
             <div class="contact">
                 <div class="logo"></div>
                 <a href="https://linkedin.com/in/alexis-decicco" target='_blank' rel='noopener noreferrer'>Alexis DeCicco</a>
-                <a class="img-link" href="https://linkedin.com/in/alexis-decicco"><img src="/icons/link-arrow.svg" alt="Link Arrow"></a>
             </div>
             <div class="contact">
                 <img src="/icons/email.svg" alt="Email Icon">
                 <a href="mailto:alexiscdecicco@gmail.com">alexiscdecicco@gmail.com</a>
-                <a class="img-link" href="mailto:alexiscdecicco@gmail.com"><img src="/icons/link-arrow.svg" alt="Link Arrow"></a>
             </div>
         </div>
 
@@ -66,6 +63,7 @@ END TEMPLATE
 }
 
 .container>div {
+    flex: 1;
     padding: 5%;
     display: flex;
     flex-direction: column;

@@ -8,7 +8,7 @@ const resumeData = {
     },
     projects: [
         {
-            title: 'Personal Portfolio Website',
+            title: 'Personal Portfolio',
             role: 'Front-End Developer',
             gitHub: 'https://github.com/AlexisDeCoy/alexis-portfolio/',
             link: 'n/a',
@@ -45,7 +45,7 @@ const resumeData = {
             ]
         },
         {
-            title: 'Karplus Portfolio Website',
+            title: 'Client Portfolio',
             role: 'Front-End Developer',
             gitHub: 'https://github.com/AlexisDeCoy/bug-portfolio/',
             link: 'https://bugkarplus.com/',
@@ -79,7 +79,7 @@ const resumeData = {
             yearEnded: 2024,
             bullets: [
                 'Installed a porcelain and stone mosaic backsplash to the kitchen to make cleaning stains easier, prevent damage to the walls from any moisture, and add color to the space.',
-                'Removed exsisting shiplap wall plank and drop ceiling paneling to allow for the reframing and drywall of the space, improving both functionality and appearance of the room.',
+                'Removed existing shiplap wall plank and drop ceiling paneling to allow for the reframing and drywall of the space, improving both functionality and appearance of the room.',
                 'Organized and added shelving for the basement storage room and selling or donating furniture and other items that were not needed to increase available storage.',
                 'Refreshed the backyard patio, including the repair of a fountain pump and compost of dead plant life, to make the communal outdoor space more functional and inviting.'
             ]
@@ -96,19 +96,6 @@ const resumeData = {
                 'Installed over 500 square feet of underlayment and LVT flooring, maintaining orientation throughout 5 different rooms to create a consistent decorative theme.',
                 'Waterproofed, cut, and installed porcelain tile for a bathroom shower to meet all code specifications and requests of the customer.',
                 'Designed and constructed two custom closets to maximize available space and increase usability for the storage of clothing and other items.'
-            ]
-        },
-        {
-            position: 'Budtender',
-            company: 'Fresh Baked Boulder',
-            city: 'Boulder',
-            state: 'CO',
-            yearStarted: 2021,
-            yearEnded: 0,
-            bullets: [
-                'Managed 40+ customer interactions daily using a Marijuana Enforcement Tracking Reporting Compliance approved POS system to provide secure and reliable access to recreational marijuana.',
-                'Memorized health, safety, and usage information for a rotating stock of 100+ products to provide accurate and affordable recommendations to local and international customers.',
-                'Collaborated with 15 other team members to maintain a friendly and clean retail environment that complied with all necessary MED requirements surrounding the storage and distribution of marijuana resulting in a frequent and growing list of regular customers.'
             ]
         },
         {

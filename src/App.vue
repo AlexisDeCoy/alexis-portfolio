@@ -139,7 +139,7 @@ onMounted(() => {
   <Resume />
   <SectionBreak id="foot" />
   <Foot />
-  <div class="spacer"></div>
+  <div class="spacer" v-if="orientation === 'portrait'"></div>
 </template>
 
 <style>
